@@ -9,8 +9,9 @@ import UIKit
 
 extension UIColor {
 
-    static let mainColor: UIColor = UIColor(red: 244, green: 244, blue: 244)
-    static let textGrayColor: UIColor = UIColor(red: 153, green: 153, blue: 153)
+    static let main: UIColor = UIColor(red: 244, green: 244, blue: 244)
+    static let textGray: UIColor = UIColor(red: 153, green: 153, blue: 153)
+    static let accentGreen: UIColor = UIColor(red: 13, green: 171, blue: 76)
 
     // MARK: - Private
 

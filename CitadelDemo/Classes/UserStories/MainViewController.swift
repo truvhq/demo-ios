@@ -20,9 +20,9 @@ final class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .mainColor
+        view.backgroundColor = .main
         tabBar.tintColor = .black
-        tabBar.unselectedItemTintColor = .textGrayColor
+        tabBar.unselectedItemTintColor = .textGray
         configureControllers()
     }
 
@@ -38,7 +38,11 @@ final class MainViewController: UITabBarController {
         let settingsTabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "SettingsButton"), selectedImage: nil)
         settingsController.tabBarItem = settingsTabBarItem
 
-        viewControllers = [productController, consoleController, settingsController]
+        viewControllers = [
+            UINavigationController(rootViewController: productController),
+            consoleController,
+            settingsController
+        ]
     }
 
 }
