@@ -7,10 +7,15 @@
 
 import Foundation
 
-struct ProductSetting {
+final class ProductSetting {
 
     let type: ProductSettingType
     var value: String
+
+    init(type: ProductSettingType, value: String = "") {
+        self.type = type
+        self.value = value
+    }
 
 }
 

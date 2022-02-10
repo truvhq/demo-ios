@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct Product {
+final class Product {
 
     var type: ProductType = .employmentHistory
 
-    var settings = [
-        ProductSetting(type: .companyMappingId, value: ""),
-        ProductSetting(type: .providerId, value: ""),
+    let settings = [
+        ProductSetting(type: .companyMappingId),
+        ProductSetting(type: .providerId),
         ProductSetting(type: .depositValue, value: "1"),
         ProductSetting(type: .routingNumber, value: "123456789"),
         ProductSetting(type: .accountNumber, value: "160025987"),

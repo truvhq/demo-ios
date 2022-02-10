@@ -9,6 +9,8 @@ import UIKit
 
 final class EditSettingViewController: UIViewController {
 
+    // MARK: - Properties
+
     private lazy var inputTextField = UITextField()
     private lazy var hintLabel = UILabel()
 
@@ -38,6 +40,8 @@ final class EditSettingViewController: UIViewController {
 
         let tapGestureRecognize = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tapGestureRecognize)
+
+        inputTextField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
 
         setupLayout()
         setupHintLabel()
@@ -97,12 +101,17 @@ final class EditSettingViewController: UIViewController {
             let rangeOfParam = (setting.type.hint as NSString).range(of: param)
             if gesture.didTapAttributedTextInLabel(label: hintLabel, inRange: rangeOfParam) {
                 inputTextField.text = param
+                textFieldDidChange()
             }
         }
     }
 
     @objc private func dismissKeyboard() {
         view.endEditing(true)
+    }
+
+    @objc private func textFieldDidChange() {
+        setting.value = inputTextField.text ?? ""
     }
 
 }

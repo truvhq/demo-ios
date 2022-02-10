@@ -39,7 +39,11 @@ final class ProductViewController: UIViewController {
     private var isSettingsExpanded = false
     private var picker: SettingsPickerView?
 
-    private var product = Product()
+    private var product: Product {
+        get {
+            AppState.shared.product
+        }
+    }
     private var additionalSettingViewModels: [SettingsCellViewModel] = []
 
     // MARK: - Lifecycle
@@ -50,12 +54,17 @@ final class ProductViewController: UIViewController {
         title = L10n.productTitle
 
         setupSubviews()
-        reload()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.prefersLargeTitles = true
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        reload()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -139,7 +148,8 @@ extension ProductViewController: UITableViewDelegate {
         if indexPath.section == 0 {
             showProductTypePicker(forRowAt: indexPath)
         } else {
-            navigationController?.pushViewController(EditSettingViewController(setting: product.settings[indexPath.row]), animated: true)
+            let editSettingsController = EditSettingViewController(setting: product.settings[indexPath.row])
+            navigationController?.pushViewController(editSettingsController, animated: true)
         }
     }
 

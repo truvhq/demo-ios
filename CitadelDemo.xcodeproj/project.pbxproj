@@ -26,6 +26,7 @@
 		0779934127B45D9B007B18DF /* ProductSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779934027B45D9B007B18DF /* ProductSetting.swift */; };
 		0779934427B5023F007B18DF /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779934327B5023F007B18DF /* Strings.swift */; };
 		0779934627B53598007B18DF /* SettingsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779934527B53598007B18DF /* SettingsPickerView.swift */; };
+		0779934A27B55380007B18DF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779934927B55380007B18DF /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		0779934027B45D9B007B18DF /* ProductSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSetting.swift; sourceTree = "<group>"; };
 		0779934327B5023F007B18DF /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		0779934527B53598007B18DF /* SettingsPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPickerView.swift; sourceTree = "<group>"; };
+		0779934927B55380007B18DF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,14 +95,13 @@
 		0779931F27B1A61C007B18DF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0779934227B50233007B18DF /* Other */,
-				0779932E27B1B05B007B18DF /* Models */,
+				0779934727B5535B007B18DF /* Core */,
 				0779932127B1A62B007B18DF /* UserStories */,
 				0779932B27B1ACCC007B18DF /* Components */,
+				0779932E27B1B05B007B18DF /* Models */,
 				0779932827B1AA2C007B18DF /* Extension */,
 				0779932027B1A627007B18DF /* Services */,
-				0731CBEE279DC3B700B1E531 /* AppDelegate.swift */,
-				0731CBF0279DC3B700B1E531 /* SceneDelegate.swift */,
+				0779934227B50233007B18DF /* Other */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -168,6 +169,16 @@
 				0779934327B5023F007B18DF /* Strings.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		0779934727B5535B007B18DF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0731CBEE279DC3B700B1E531 /* AppDelegate.swift */,
+				0731CBF0279DC3B700B1E531 /* SceneDelegate.swift */,
+				0779934927B55380007B18DF /* AppState.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +254,7 @@
 				0731CBF3279DC3B700B1E531 /* MainViewController.swift in Sources */,
 				0779933D27B43147007B18DF /* EditSettingViewController.swift in Sources */,
 				0779934427B5023F007B18DF /* Strings.swift in Sources */,
+				0779934A27B55380007B18DF /* AppState.swift in Sources */,
 				0731CBEF279DC3B700B1E531 /* AppDelegate.swift in Sources */,
 				0779933027B1B068007B18DF /* ProductType.swift in Sources */,
 				0779932327B1A6C5007B18DF /* ProductViewController.swift in Sources */,

@@ -29,13 +29,25 @@ final class MainViewController: UITabBarController {
     // MARK: - Private
 
     private func configureControllers() {
-        let productTabBarItem = UITabBarItem(title: L10n.productTitle, image: UIImage(named: "PlayButton"), selectedImage: nil)
+        let productTabBarItem = UITabBarItem(
+            title: L10n.productTitle,
+            image: UIImage(named: "PlayButton"),
+            selectedImage: nil
+        )
         productController.tabBarItem = productTabBarItem
 
-        let consoleTabBarItem = UITabBarItem(title: L10n.consoleTitle, image: UIImage(named: "TerminalButton"), selectedImage: nil)
+        let consoleTabBarItem = UITabBarItem(
+            title: L10n.consoleTitle,
+            image: UIImage(named: "TerminalButton"),
+            selectedImage: nil
+        )
         consoleController.tabBarItem = consoleTabBarItem
 
-        let settingsTabBarItem = UITabBarItem(title: L10n.settingsTitle, image: UIImage(named: "SettingsButton"), selectedImage: nil)
+        let settingsTabBarItem = UITabBarItem(
+            title: L10n.settingsTitle,
+            image: UIImage(named: "SettingsButton"),
+            selectedImage: nil
+        )
         settingsController.tabBarItem = settingsTabBarItem
 
         viewControllers = [
