@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ProductType {
+enum ProductType: CaseIterable {
 
     case employmentHistory
     case incomeAndEmployment

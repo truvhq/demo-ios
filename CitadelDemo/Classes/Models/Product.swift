@@ -9,8 +9,7 @@ import Foundation
 
 struct Product {
 
-//    var type: ProductType?
-    var type: ProductType? = .paycheckLinkedLoan
+    var type: ProductType = .employmentHistory
 
     var settings = [
         ProductSetting(type: .companyMappingId, value: ""),

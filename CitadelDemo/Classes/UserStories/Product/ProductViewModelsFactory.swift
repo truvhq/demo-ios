@@ -14,7 +14,7 @@ enum ProductViewModelsFactory {
         
         var viewModels: [SettingsCellViewModel] = []
 
-        for setting in product.settings where product.type?.avaliableSettings.contains(setting.type) == true {
+        for setting in product.settings where product.type.avaliableSettings.contains(setting.type) {
             viewModels.append(SettingsCellViewModel(title: setting.type.title, value: setting.value))
         }
 

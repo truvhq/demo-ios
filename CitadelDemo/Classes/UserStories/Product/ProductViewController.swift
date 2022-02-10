@@ -11,26 +11,46 @@ final class ProductViewController: UIViewController {
 
     // MARK: - Properties
 
-    private let tableView = UITableView()
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView()
+
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = .main
+        tableView.register(MenuTableViewCell.self, forCellReuseIdentifier: Constants.cellReuseIdentifier)
+        tableView.alwaysBounceVertical = false
+
+        tableView.delegate = self
+        tableView.dataSource = self
+
+        return tableView
+    }()
+    private lazy var openBridgeButton: UIButton = {
+        let button = UIButton()
+
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .accentGreen
+        button.layer.cornerRadius = 8
+        button.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
+        button.setTitle(L10n.openBridgeButtonTitle, for: [])
+        button.addTarget(self, action: #selector(didTapOpenBridgeButton), for: .touchUpInside)
+
+        return button
+    }()
     private var isSettingsExpanded = false
+    private var picker: SettingsPickerView?
 
     private var product = Product()
-    private var additionalSettingViewModels: [SettingsCellViewModel] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
+    private var additionalSettingViewModels: [SettingsCellViewModel] = []
 
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = "Product"
+        title = L10n.productTitle
 
         setupSubviews()
-        setupTableView()
-        additionalSettingViewModels = ProductViewModelsFactory.makeAdditionalSettingViewModels(from: product, isSettingsExpanded: isSettingsExpanded)
+        reload()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -47,31 +67,67 @@ final class ProductViewController: UIViewController {
 
     private func setupSubviews() {
         view.addSubview(tableView)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-    }
 
-    private func setupTableView() {
-        tableView.backgroundColor = .main
-        tableView.register(MenuTableViewCell.self, forCellReuseIdentifier: Constants.cellReuseIdentifier)
-        tableView.alwaysBounceVertical = false
-
-        tableView.delegate = self
-        tableView.dataSource = self
+        view.addSubview(openBridgeButton)
+        NSLayoutConstraint.activate([
+            openBridgeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            openBridgeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            openBridgeButton.topAnchor.constraint(equalTo: tableView.bottomAnchor, constant: 16),
+            openBridgeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            openBridgeButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
 
     @objc private func didTapExpandButton() {
         isSettingsExpanded = !isSettingsExpanded
-        additionalSettingViewModels = ProductViewModelsFactory.makeAdditionalSettingViewModels(from: product, isSettingsExpanded: isSettingsExpanded)
+        reload()
     }
 
-    private func showProductTypePicker() {
-        
+    private func showProductTypePicker(forRowAt index: IndexPath) {
+        guard let cell = tableView.cellForRow(at: index) as? MenuTableViewCell else { return }
+
+        picker = SettingsPickerView(data: ProductType.allCases.map { $0.title } )
+        picker?.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+
+        let pickerAccessory = UIToolbar()
+        pickerAccessory.autoresizingMask = .flexibleHeight
+        pickerAccessory.isTranslucent = false
+
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapPickerDoneButton))
+        doneButton.tintColor = .accentGreen
+
+        pickerAccessory.items = [flexibleSpace, doneButton]
+
+        if let selectedIndex = ProductType.allCases.firstIndex(of: product.type) {
+            picker?.selectRow(selectedIndex, inComponent: 0, animated: false)
+        }
+        cell.activationTextField.inputView = picker
+        cell.activationTextField.inputAccessoryView = pickerAccessory
+        cell.activationTextField.becomeFirstResponder()
+    }
+
+    @objc private func didTapPickerDoneButton() {
+        if let value = picker?.selectedValue,
+           let type = ProductType.allCases.first(where: { $0.title == value } ) {
+            product.type = type
+        }
+        reload()
+        view.endEditing(true)
+    }
+
+    @objc private func didTapOpenBridgeButton() {
+
+    }
+
+    private func reload() {
+        additionalSettingViewModels = ProductViewModelsFactory.makeAdditionalSettingViewModels(from: product, isSettingsExpanded: isSettingsExpanded)
+        tableView.reloadData()
     }
 
 }
@@ -81,7 +137,7 @@ extension ProductViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if indexPath.section == 0 {
-            showProductTypePicker()
+            showProductTypePicker(forRowAt: indexPath)
         } else {
             navigationController?.pushViewController(EditSettingViewController(setting: product.settings[indexPath.row]), animated: true)
         }
@@ -112,7 +168,7 @@ extension ProductViewController: UITableViewDataSource {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 20))
         let button = UIButton(frame: CGRect(x: 16, y: 0, width: tableView.frame.width, height: 20))
 
-        let title = isSettingsExpanded ? "Hide additional settings" : "Show additional settings"
+        let title = isSettingsExpanded ? L10n.hideAdditionalSettings : L10n.showAdditionalSettings
         button.contentHorizontalAlignment = .left
         button.titleLabel?.font = .systemFont(ofSize: 17)
         button.setTitle(title, for: [])
@@ -136,7 +192,7 @@ extension ProductViewController: UITableViewDataSource {
         let detail: String?
         if indexPath.section == 0 {
             title = "Product type"
-            detail = product.type?.title
+            detail = product.type.title
         } else {
             title = additionalSettingViewModels[indexPath.row].title
             detail = additionalSettingViewModels[indexPath.row].value

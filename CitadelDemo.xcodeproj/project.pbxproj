@@ -16,7 +16,6 @@
 		0779932527B1A6D1007B18DF /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932427B1A6D1007B18DF /* ConsoleViewController.swift */; };
 		0779932727B1A6DC007B18DF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932627B1A6DC007B18DF /* SettingsViewController.swift */; };
 		0779932A27B1AA3B007B18DF /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932927B1AA3B007B18DF /* UIColor+Additions.swift */; };
-		0779932D27B1ACE2007B18DF /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932C27B1ACE2007B18DF /* RoundedButton.swift */; };
 		0779933027B1B068007B18DF /* ProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932F27B1B068007B18DF /* ProductType.swift */; };
 		0779933227B1B1BD007B18DF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779933127B1B1BD007B18DF /* Product.swift */; };
 		0779933427B2D165007B18DF /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779933327B2D165007B18DF /* MenuTableViewCell.swift */; };
@@ -25,6 +24,8 @@
 		0779933D27B43147007B18DF /* EditSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779933C27B43147007B18DF /* EditSettingViewController.swift */; };
 		0779933F27B459A1007B18DF /* UITapGestureRecognizer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779933E27B459A1007B18DF /* UITapGestureRecognizer+Additions.swift */; };
 		0779934127B45D9B007B18DF /* ProductSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779934027B45D9B007B18DF /* ProductSetting.swift */; };
+		0779934427B5023F007B18DF /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779934327B5023F007B18DF /* Strings.swift */; };
+		0779934627B53598007B18DF /* SettingsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779934527B53598007B18DF /* SettingsPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +40,6 @@
 		0779932427B1A6D1007B18DF /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
 		0779932627B1A6DC007B18DF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0779932927B1AA3B007B18DF /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
-		0779932C27B1ACE2007B18DF /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		0779932F27B1B068007B18DF /* ProductType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductType.swift; sourceTree = "<group>"; };
 		0779933127B1B1BD007B18DF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		0779933327B2D165007B18DF /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
@@ -48,6 +48,8 @@
 		0779933C27B43147007B18DF /* EditSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSettingViewController.swift; sourceTree = "<group>"; };
 		0779933E27B459A1007B18DF /* UITapGestureRecognizer+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+Additions.swift"; sourceTree = "<group>"; };
 		0779934027B45D9B007B18DF /* ProductSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSetting.swift; sourceTree = "<group>"; };
+		0779934327B5023F007B18DF /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		0779934527B53598007B18DF /* SettingsPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 		0779931F27B1A61C007B18DF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0779934227B50233007B18DF /* Other */,
 				0779932E27B1B05B007B18DF /* Models */,
 				0779932127B1A62B007B18DF /* UserStories */,
 				0779932B27B1ACCC007B18DF /* Components */,
@@ -133,8 +136,8 @@
 		0779932B27B1ACCC007B18DF /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0779934527B53598007B18DF /* SettingsPickerView.swift */,
 				0779933527B2D340007B18DF /* SettingsCellViewModel.swift */,
-				0779932C27B1ACE2007B18DF /* RoundedButton.swift */,
 				0779933327B2D165007B18DF /* MenuTableViewCell.swift */,
 			);
 			path = Components;
@@ -157,6 +160,14 @@
 				0779933827B2D567007B18DF /* ProductViewModelsFactory.swift */,
 			);
 			path = Product;
+			sourceTree = "<group>";
+		};
+		0779934227B50233007B18DF /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				0779934327B5023F007B18DF /* Strings.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,11 +242,11 @@
 			files = (
 				0731CBF3279DC3B700B1E531 /* MainViewController.swift in Sources */,
 				0779933D27B43147007B18DF /* EditSettingViewController.swift in Sources */,
+				0779934427B5023F007B18DF /* Strings.swift in Sources */,
 				0731CBEF279DC3B700B1E531 /* AppDelegate.swift in Sources */,
 				0779933027B1B068007B18DF /* ProductType.swift in Sources */,
 				0779932327B1A6C5007B18DF /* ProductViewController.swift in Sources */,
 				0779933F27B459A1007B18DF /* UITapGestureRecognizer+Additions.swift in Sources */,
-				0779932D27B1ACE2007B18DF /* RoundedButton.swift in Sources */,
 				0779934127B45D9B007B18DF /* ProductSetting.swift in Sources */,
 				0779932527B1A6D1007B18DF /* ConsoleViewController.swift in Sources */,
 				0731CBF1279DC3B700B1E531 /* SceneDelegate.swift in Sources */,
@@ -245,6 +256,7 @@
 				0779933927B2D567007B18DF /* ProductViewModelsFactory.swift in Sources */,
 				0779932A27B1AA3B007B18DF /* UIColor+Additions.swift in Sources */,
 				0779933427B2D165007B18DF /* MenuTableViewCell.swift in Sources */,
+				0779934627B53598007B18DF /* SettingsPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
