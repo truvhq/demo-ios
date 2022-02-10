@@ -21,6 +21,8 @@ final class ProductSetting {
 
 enum ProductSettingType {
 
+    // Product
+
     case companyMappingId
     case providerId
     case depositValue
@@ -29,22 +31,38 @@ enum ProductSettingType {
     case bankName
     case accountType
 
+    // Settings
+
+    case clientId
+
+    case sandboxEnvironment
+    case developmentEnvironment
+    case productionEnvironment
+
     var title: String {
         switch self {
         case .companyMappingId:
-            return "Company Mapping ID"
+            return L10n.companyMappingId
         case .providerId:
-            return "Provider ID"
+            return L10n.providerId
         case .depositValue:
-            return "Deposit Value"
+            return L10n.depositValue
         case .routingNumber:
-            return "Routing Number"
+            return L10n.routingNumber
         case .accountNumber:
-            return "Account Number"
+            return L10n.accountNumber
         case .bankName:
-            return "Bank Name"
+            return L10n.bankName
         case .accountType:
-            return "Account type"
+            return L10n.accountType
+        case .clientId:
+            return L10n.clientId
+        case .sandboxEnvironment:
+            return L10n.sandbox
+        case .developmentEnvironment:
+            return L10n.development
+        case .productionEnvironment:
+            return L10n.production
         }
     }
 
@@ -83,6 +101,10 @@ enum ProductSettingType {
         default:
             return []
         }
+    }
+
+    var isNumericInput: Bool {
+        self == .depositValue || self == .routingNumber || self == .accountNumber
     }
 
 }

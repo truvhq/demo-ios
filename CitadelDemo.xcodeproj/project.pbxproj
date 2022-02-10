@@ -27,6 +27,9 @@
 		0779934427B5023F007B18DF /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779934327B5023F007B18DF /* Strings.swift */; };
 		0779934627B53598007B18DF /* SettingsPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779934527B53598007B18DF /* SettingsPickerView.swift */; };
 		0779934A27B55380007B18DF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779934927B55380007B18DF /* AppState.swift */; };
+		0779934D27B55CD4007B18DF /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779934C27B55CD4007B18DF /* Environment.swift */; };
+		0779934F27B55DB7007B18DF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779934E27B55DB7007B18DF /* Settings.swift */; };
+		0779935327B56248007B18DF /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935227B56248007B18DF /* KeychainManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		0779934327B5023F007B18DF /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		0779934527B53598007B18DF /* SettingsPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPickerView.swift; sourceTree = "<group>"; };
 		0779934927B55380007B18DF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		0779934C27B55CD4007B18DF /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		0779934E27B55DB7007B18DF /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		0779935227B56248007B18DF /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,7 @@
 		0779932027B1A627007B18DF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0779935227B56248007B18DF /* KeychainManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -150,6 +157,8 @@
 				0779932F27B1B068007B18DF /* ProductType.swift */,
 				0779933127B1B1BD007B18DF /* Product.swift */,
 				0779934027B45D9B007B18DF /* ProductSetting.swift */,
+				0779934C27B55CD4007B18DF /* Environment.swift */,
+				0779934E27B55DB7007B18DF /* Settings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -265,7 +274,10 @@
 				0779933627B2D340007B18DF /* SettingsCellViewModel.swift in Sources */,
 				0779933227B1B1BD007B18DF /* Product.swift in Sources */,
 				0779932727B1A6DC007B18DF /* SettingsViewController.swift in Sources */,
+				0779934F27B55DB7007B18DF /* Settings.swift in Sources */,
 				0779933927B2D567007B18DF /* ProductViewModelsFactory.swift in Sources */,
+				0779935327B56248007B18DF /* KeychainManager.swift in Sources */,
+				0779934D27B55CD4007B18DF /* Environment.swift in Sources */,
 				0779932A27B1AA3B007B18DF /* UIColor+Additions.swift in Sources */,
 				0779933427B2D165007B18DF /* MenuTableViewCell.swift in Sources */,
 				0779934627B53598007B18DF /* SettingsPickerView.swift in Sources */,
@@ -409,6 +421,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CitadelDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -421,7 +434,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.citadel.CitadelDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.citadel.CitadelDemoIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -436,6 +449,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CitadelDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -448,7 +462,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.citadel.CitadelDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.citadel.CitadelDemoIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

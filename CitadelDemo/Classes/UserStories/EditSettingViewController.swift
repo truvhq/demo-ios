@@ -36,6 +36,7 @@ final class EditSettingViewController: UIViewController {
         inputTextField.text = setting.value
 
         inputTextField.returnKeyType = .done
+        inputTextField.keyboardType = setting.type.isNumericInput ? .decimalPad : .default
         inputTextField.becomeFirstResponder()
 
         let tapGestureRecognize = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
