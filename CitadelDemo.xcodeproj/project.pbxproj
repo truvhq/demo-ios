@@ -30,6 +30,7 @@
 		0779934D27B55CD4007B18DF /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779934C27B55CD4007B18DF /* Environment.swift */; };
 		0779934F27B55DB7007B18DF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779934E27B55DB7007B18DF /* Settings.swift */; };
 		0779935327B56248007B18DF /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935227B56248007B18DF /* KeychainManager.swift */; };
+		0779935527B80BE4007B18DF /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935427B80BE4007B18DF /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		0779934C27B55CD4007B18DF /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		0779934E27B55DB7007B18DF /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		0779935227B56248007B18DF /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		0779935427B80BE4007B18DF /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				0779934327B5023F007B18DF /* Strings.swift */,
+				0779935427B80BE4007B18DF /* Endpoint.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0731CBF3279DC3B700B1E531 /* MainViewController.swift in Sources */,
+				0779935527B80BE4007B18DF /* Endpoint.swift in Sources */,
 				0779933D27B43147007B18DF /* EditSettingViewController.swift in Sources */,
 				0779934427B5023F007B18DF /* Strings.swift in Sources */,
 				0779934A27B55380007B18DF /* AppState.swift in Sources */,

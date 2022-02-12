@@ -14,6 +14,10 @@ enum L10n {
     static let hideAdditionalSettings = "Hide additional settings"
     static let showAdditionalSettings = "Show additional settings"
 
+    static let errorKeyAlertTitle = "Can’t open Citadel Bridge"
+    static let errorKeyAlertDesription = "Add a key or change the environment in the settings to run Citadel Bridge"
+    static let errorKeyAlertButtonTitle = "Open settings"
+
     static let companyMappingId = "Company Mapping ID"
     static let providerId = "Provider ID"
     static let depositValue = "Deposit Value"

@@ -131,7 +131,19 @@ final class ProductViewController: UIViewController {
     }
 
     @objc private func didTapOpenBridgeButton() {
+        guard AppState.shared.settings.hasKeyForSelectedEnvironment else {
+            showEmptyKeyAlert()
+            return
+        }
+    }
 
+    private func showEmptyKeyAlert() {
+        let alertController = UIAlertController(title: L10n.errorKeyAlertTitle, message: L10n.errorKeyAlertDesription, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: L10n.errorKeyAlertButtonTitle, style: .default) { [weak self] _ in
+            self?.tabBarController?.selectedIndex = 2
+        })
+
+        present(alertController, animated: true, completion: nil)
     }
 
     private func reload() {

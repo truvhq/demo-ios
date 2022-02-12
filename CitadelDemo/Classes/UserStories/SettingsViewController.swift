@@ -52,6 +52,12 @@ final class SettingsViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = false
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        tableView.reloadData()
+    }
+
     // MARK: - Private
 
     private func setupSubviews() {
