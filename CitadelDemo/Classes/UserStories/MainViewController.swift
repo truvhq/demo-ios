@@ -23,6 +23,7 @@ final class MainViewController: UITabBarController {
         view.backgroundColor = .main
         tabBar.tintColor = .black
         tabBar.unselectedItemTintColor = .textGray
+        tabBar.isTranslucent = false
         configureControllers()
     }
 

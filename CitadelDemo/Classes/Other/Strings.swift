@@ -25,6 +25,7 @@ enum L10n {
     static let accountNumber = "Account Number"
     static let bankName = "Bank Name"
     static let accountType = "Account type"
+    static let depositType = "Deposit type"
 
     static let environment = "Environment"
     static let sandbox = "Sandbox"

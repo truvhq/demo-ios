@@ -131,10 +131,13 @@ final class ProductViewController: UIViewController {
     }
 
     @objc private func didTapOpenBridgeButton() {
-        guard AppState.shared.settings.hasKeyForSelectedEnvironment else {
+        guard let accessKey = AppState.shared.settings.keyForSelectedEnvironment, !accessKey.isEmpty else {
             showEmptyKeyAlert()
             return
         }
+
+        let browserController = BrowserViewController(accessKey: accessKey, product: product)
+        navigationController?.pushViewController(browserController, animated: true)
     }
 
     private func showEmptyKeyAlert() {

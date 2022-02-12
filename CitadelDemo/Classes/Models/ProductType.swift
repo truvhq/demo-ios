@@ -33,12 +33,35 @@ enum ProductType: CaseIterable {
         }
     }
 
-    var avaliableSettings: Set<ProductSettingType> {
+    var hasAdditionalSettings: Bool {
         switch self {
         case .directDepositSwitch, .paycheckLinkedLoan:
-            return [.companyMappingId, .providerId, .depositValue, .routingNumber, .accountNumber, .bankName, .accountType]
+            return true
         default:
+            return false
+        }
+    }
+
+    var avaliableSettings: Set<ProductSettingType> {
+        if hasAdditionalSettings {
+            return [.companyMappingId, .providerId, .depositValue, .routingNumber, .accountNumber, .bankName, .accountType]
+        } else {
             return [.companyMappingId, .providerId]
+        }
+    }
+
+    var requestValue: String {
+        switch self {
+        case .employmentHistory:
+            return "employment"
+        case .incomeAndEmployment:
+            return "income"
+        case .directDepositSwitch:
+            return "deposit_switch"
+        case .paycheckLinkedLoan:
+            return "pll"
+        case .employeeDirectory, .payrollHistory:
+            return "admin"
         }
     }
 

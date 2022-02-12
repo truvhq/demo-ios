@@ -31,6 +31,9 @@
 		0779934F27B55DB7007B18DF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779934E27B55DB7007B18DF /* Settings.swift */; };
 		0779935327B56248007B18DF /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935227B56248007B18DF /* KeychainManager.swift */; };
 		0779935527B80BE4007B18DF /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935427B80BE4007B18DF /* Endpoint.swift */; };
+		0779935727B81073007B18DF /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935627B81073007B18DF /* BrowserViewController.swift */; };
+		0779935927B82961007B18DF /* BridgeTokenRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935827B82961007B18DF /* BridgeTokenRequestBody.swift */; };
+		0779935B27B85878007B18DF /* Encodable+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935A27B85878007B18DF /* Encodable+JSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		0779934E27B55DB7007B18DF /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		0779935227B56248007B18DF /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		0779935427B80BE4007B18DF /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		0779935627B81073007B18DF /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
+		0779935827B82961007B18DF /* BridgeTokenRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeTokenRequestBody.swift; sourceTree = "<group>"; };
+		0779935A27B85878007B18DF /* Encodable+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+JSON.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +136,7 @@
 				0779932427B1A6D1007B18DF /* ConsoleViewController.swift */,
 				0779932627B1A6DC007B18DF /* SettingsViewController.swift */,
 				0779933C27B43147007B18DF /* EditSettingViewController.swift */,
+				0779935627B81073007B18DF /* BrowserViewController.swift */,
 			);
 			path = UserStories;
 			sourceTree = "<group>";
@@ -139,6 +146,7 @@
 			children = (
 				0779932927B1AA3B007B18DF /* UIColor+Additions.swift */,
 				0779933E27B459A1007B18DF /* UITapGestureRecognizer+Additions.swift */,
+				0779935A27B85878007B18DF /* Encodable+JSON.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 				0779934027B45D9B007B18DF /* ProductSetting.swift */,
 				0779934C27B55CD4007B18DF /* Environment.swift */,
 				0779934E27B55DB7007B18DF /* Settings.swift */,
+				0779935827B82961007B18DF /* BridgeTokenRequestBody.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -265,8 +274,10 @@
 			files = (
 				0731CBF3279DC3B700B1E531 /* MainViewController.swift in Sources */,
 				0779935527B80BE4007B18DF /* Endpoint.swift in Sources */,
+				0779935B27B85878007B18DF /* Encodable+JSON.swift in Sources */,
 				0779933D27B43147007B18DF /* EditSettingViewController.swift in Sources */,
 				0779934427B5023F007B18DF /* Strings.swift in Sources */,
+				0779935927B82961007B18DF /* BridgeTokenRequestBody.swift in Sources */,
 				0779934A27B55380007B18DF /* AppState.swift in Sources */,
 				0731CBEF279DC3B700B1E531 /* AppDelegate.swift in Sources */,
 				0779933027B1B068007B18DF /* ProductType.swift in Sources */,
@@ -284,6 +295,7 @@
 				0779934D27B55CD4007B18DF /* Environment.swift in Sources */,
 				0779932A27B1AA3B007B18DF /* UIColor+Additions.swift in Sources */,
 				0779933427B2D165007B18DF /* MenuTableViewCell.swift in Sources */,
+				0779935727B81073007B18DF /* BrowserViewController.swift in Sources */,
 				0779934627B53598007B18DF /* SettingsPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

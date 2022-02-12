@@ -18,7 +18,8 @@ final class Product {
         ProductSetting(type: .routingNumber, value: "123456789"),
         ProductSetting(type: .accountNumber, value: "160025987"),
         ProductSetting(type: .bankName, value: "TD Bank"),
-        ProductSetting(type: .accountType, value: "checking")
+        ProductSetting(type: .accountType, value: "checking"),
+        ProductSetting(type: .depositType, value: "amount")
     ]
 
 }

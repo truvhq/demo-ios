@@ -30,6 +30,7 @@ enum ProductSettingType {
     case accountNumber
     case bankName
     case accountType
+    case depositType
 
     // Settings
 
@@ -55,6 +56,8 @@ enum ProductSettingType {
             return L10n.bankName
         case .accountType:
             return L10n.accountType
+        case .depositType:
+            return L10n.depositType
         case .clientId:
             return L10n.clientId
         case .sandboxEnvironment:

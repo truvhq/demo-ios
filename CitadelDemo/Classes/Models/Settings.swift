@@ -23,8 +23,8 @@ final class Settings {
         ]
     }
 
-    var hasKeyForSelectedEnvironment: Bool {
-        return accessKeys.first(where: { $0.type == selectedEnvironment.productSettingsType })?.value.isEmpty == false
+    var keyForSelectedEnvironment: String? {
+        return accessKeys.first(where: { $0.type == selectedEnvironment.productSettingsType })?.value
     }
 
 }
