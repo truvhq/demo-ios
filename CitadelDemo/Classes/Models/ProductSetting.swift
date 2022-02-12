@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ProductSetting {
+final class ProductSetting: Codable {
 
     let type: ProductSettingType
     var value: String
@@ -19,7 +19,7 @@ final class ProductSetting {
 
 }
 
-enum ProductSettingType {
+enum ProductSettingType: Codable {
 
     // Product
 

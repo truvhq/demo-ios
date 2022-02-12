@@ -12,6 +12,6 @@ final class AppState {
     private init() {}
 
     var product = Product()
-    var settings = Settings()
+    var settings = KeychainManager().retrieveSettings() ?? Settings()
 
 }

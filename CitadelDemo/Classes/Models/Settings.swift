@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Settings {
+final class Settings: Codable {
 
     var selectedEnvironment: Environment
     let clientId: ProductSetting

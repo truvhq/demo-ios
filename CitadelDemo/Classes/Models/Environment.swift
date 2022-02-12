@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Environment: CaseIterable {
+enum Environment: CaseIterable, Codable {
 
     case sandbox
     case development

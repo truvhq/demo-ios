@@ -46,6 +46,8 @@ final class ProductViewController: UIViewController {
     }
     private var additionalSettingViewModels: [SettingsCellViewModel] = []
 
+    private let service = NetworkService()
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -136,8 +138,16 @@ final class ProductViewController: UIViewController {
             return
         }
 
-        let browserController = BrowserViewController(accessKey: accessKey, product: product)
-        navigationController?.pushViewController(browserController, animated: true)
+        service.getBridgeToken(accessKey: accessKey, product: product) { [weak self] tokenResponse in
+            guard let self = self else { return }
+            guard let token = tokenResponse?.bridge_token else {
+                self.showEmptyKeyAlert()
+                return
+            }
+
+            let browserController = BrowserViewController(token: token)
+            self.navigationController?.pushViewController(browserController, animated: true)
+        }
     }
 
     private func showEmptyKeyAlert() {

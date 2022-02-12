@@ -1,5 +1,5 @@
 //
-//  BridgeTokenRequestBody.swift
+//  BridgeTokenRequest.swift
 //  CitadelDemo
 //
 //  Created by Sergey Butorin on 12.02.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BridgeTokenRequestBody: Encodable {
+struct BridgeTokenRequest: Encodable {
 
     let product_type: String
     let provider_id: String
@@ -23,7 +23,7 @@ struct BridgeTokenRequestBody: Encodable {
 
 }
 
-extension BridgeTokenRequestBody {
+extension BridgeTokenRequest {
 
     struct AccountRequest: Encodable {
         let account_number: String

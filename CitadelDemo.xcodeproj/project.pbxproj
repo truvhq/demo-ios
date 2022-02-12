@@ -32,8 +32,10 @@
 		0779935327B56248007B18DF /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935227B56248007B18DF /* KeychainManager.swift */; };
 		0779935527B80BE4007B18DF /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935427B80BE4007B18DF /* Endpoint.swift */; };
 		0779935727B81073007B18DF /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935627B81073007B18DF /* BrowserViewController.swift */; };
-		0779935927B82961007B18DF /* BridgeTokenRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935827B82961007B18DF /* BridgeTokenRequestBody.swift */; };
+		0779935927B82961007B18DF /* BridgeTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935827B82961007B18DF /* BridgeTokenRequest.swift */; };
 		0779935B27B85878007B18DF /* Encodable+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935A27B85878007B18DF /* Encodable+JSON.swift */; };
+		0779935D27B85F7B007B18DF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935C27B85F7B007B18DF /* NetworkService.swift */; };
+		0779936027B861E8007B18DF /* BridgeTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935F27B861E8007B18DF /* BridgeTokenResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,8 +66,10 @@
 		0779935227B56248007B18DF /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		0779935427B80BE4007B18DF /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		0779935627B81073007B18DF /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
-		0779935827B82961007B18DF /* BridgeTokenRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeTokenRequestBody.swift; sourceTree = "<group>"; };
+		0779935827B82961007B18DF /* BridgeTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeTokenRequest.swift; sourceTree = "<group>"; };
 		0779935A27B85878007B18DF /* Encodable+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+JSON.swift"; sourceTree = "<group>"; };
+		0779935C27B85F7B007B18DF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		0779935F27B861E8007B18DF /* BridgeTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeTokenResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,7 @@
 		0779932027B1A627007B18DF /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				0779935E27B861D3007B18DF /* Network */,
 				0779935227B56248007B18DF /* KeychainManager.swift */,
 			);
 			path = Services;
@@ -169,7 +174,6 @@
 				0779934027B45D9B007B18DF /* ProductSetting.swift */,
 				0779934C27B55CD4007B18DF /* Environment.swift */,
 				0779934E27B55DB7007B18DF /* Settings.swift */,
-				0779935827B82961007B18DF /* BridgeTokenRequestBody.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -200,6 +204,24 @@
 				0779934927B55380007B18DF /* AppState.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		0779935E27B861D3007B18DF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0779936127B861EA007B18DF /* Models */,
+				0779935C27B85F7B007B18DF /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		0779936127B861EA007B18DF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0779935827B82961007B18DF /* BridgeTokenRequest.swift */,
+				0779935F27B861E8007B18DF /* BridgeTokenResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,7 +299,7 @@
 				0779935B27B85878007B18DF /* Encodable+JSON.swift in Sources */,
 				0779933D27B43147007B18DF /* EditSettingViewController.swift in Sources */,
 				0779934427B5023F007B18DF /* Strings.swift in Sources */,
-				0779935927B82961007B18DF /* BridgeTokenRequestBody.swift in Sources */,
+				0779935927B82961007B18DF /* BridgeTokenRequest.swift in Sources */,
 				0779934A27B55380007B18DF /* AppState.swift in Sources */,
 				0731CBEF279DC3B700B1E531 /* AppDelegate.swift in Sources */,
 				0779933027B1B068007B18DF /* ProductType.swift in Sources */,
@@ -285,6 +307,7 @@
 				0779933F27B459A1007B18DF /* UITapGestureRecognizer+Additions.swift in Sources */,
 				0779934127B45D9B007B18DF /* ProductSetting.swift in Sources */,
 				0779932527B1A6D1007B18DF /* ConsoleViewController.swift in Sources */,
+				0779936027B861E8007B18DF /* BridgeTokenResponse.swift in Sources */,
 				0731CBF1279DC3B700B1E531 /* SceneDelegate.swift in Sources */,
 				0779933627B2D340007B18DF /* SettingsCellViewModel.swift in Sources */,
 				0779933227B1B1BD007B18DF /* Product.swift in Sources */,
@@ -296,6 +319,7 @@
 				0779932A27B1AA3B007B18DF /* UIColor+Additions.swift in Sources */,
 				0779933427B2D165007B18DF /* MenuTableViewCell.swift in Sources */,
 				0779935727B81073007B18DF /* BrowserViewController.swift in Sources */,
+				0779935D27B85F7B007B18DF /* NetworkService.swift in Sources */,
 				0779934627B53598007B18DF /* SettingsPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

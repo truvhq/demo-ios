@@ -14,14 +14,12 @@ final class BrowserViewController: UIViewController, WKUIDelegate {
 
     var webView: WKWebView!
 
-    private let accessKey: String
-    private let product: Product
+    private let token: String
 
     // MARK: - Lifecycle
 
-    init(accessKey: String, product: Product) {
-        self.accessKey = accessKey
-        self.product = product
+    init(token: String) {
+        self.token = token
 
         super.init(nibName: nil, bundle: nil)
     }
@@ -40,13 +38,9 @@ final class BrowserViewController: UIViewController, WKUIDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let tokenUrl = URL(string:"\(Endpoint.apiHost)/v1/bridge-tokens/") else { return }
-        var request = URLRequest(url: tokenUrl)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue(AppState.shared.settings.clientId.value, forHTTPHeaderField: "X-Access-Client-Id")
-        request.addValue(accessKey, forHTTPHeaderField: "X-Access-Secret")
-        request.httpBody = BridgeTokenRequestBody(product: product).toJSONData()
+        guard let url = URL(string: Endpoint.widgetUrl) else { return }
+        let request = URLRequest(url: url)
+
         webView.load(request)
     }
 }

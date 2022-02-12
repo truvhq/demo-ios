@@ -31,6 +31,7 @@ final class SettingsViewController: UIViewController {
             AppState.shared.settings
         }
     }
+    private let keychainManager = KeychainManager()
 
     // MARK: - Lifecycle
 
@@ -55,7 +56,7 @@ final class SettingsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        tableView.reloadData()
+        didUpdateSettings()
     }
 
     // MARK: - Private
@@ -99,8 +100,13 @@ final class SettingsViewController: UIViewController {
            let selectedEnvironment = Environment.allCases.first(where: { $0.title == value } ) {
             settings.selectedEnvironment = selectedEnvironment
         }
-        tableView.reloadData()
+        didUpdateSettings()
         view.endEditing(true)
+    }
+
+    private func didUpdateSettings() {
+        keychainManager.saveSettings(settings)
+        tableView.reloadData()
     }
 
 }
