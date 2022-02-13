@@ -27,6 +27,9 @@ enum L10n {
     static let accountType = "Account type"
     static let depositType = "Deposit type"
 
+    static let emptyConsoleTitle = "Open the Citadel Bridge to view logs"
+    static let emptyConsoleButtonTitle = "Open Citadel Bridge"
+
     static let environment = "Environment"
     static let sandbox = "Sandbox"
     static let development = "Development"

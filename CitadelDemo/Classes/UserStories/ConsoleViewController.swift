@@ -60,11 +60,11 @@ final class ConsoleViewController: UIViewController {
         let label = UILabel()
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 17, weight: .semibold)
-        label.text = "Open the Citadel Bridge to view logs"
+        label.text = L10n.emptyConsoleTitle
 
         let button = UIButton()
         button.setTitleColor(.accentGreen, for: [])
-        button.setTitle("Open Citadel Bridge", for: [])
+        button.setTitle(L10n.emptyConsoleButtonTitle, for: [])
         button.addTarget(self, action: #selector(openProductPage), for: .touchUpInside)
 
         let stackView = UIStackView()

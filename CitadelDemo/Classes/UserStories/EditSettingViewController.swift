@@ -99,6 +99,11 @@ final class EditSettingViewController: UIViewController {
     }
 
     @objc private func didTapHintLabel(gesture: UITapGestureRecognizer) {
+        if setting.type.tappableParams.count == 1 {
+            inputTextField.text = setting.type.tappableParams.first
+            textFieldDidChange()
+            return
+        }
         for param in setting.type.tappableParams {
             let rangeOfParam = (setting.type.hint as NSString).range(of: param)
             if gesture.didTapAttributedTextInLabel(label: hintLabel, inRange: rangeOfParam) {
