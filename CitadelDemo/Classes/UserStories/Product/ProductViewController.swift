@@ -38,6 +38,7 @@ final class ProductViewController: UIViewController {
     }()
     private var isSettingsExpanded = false
     private var picker: SettingsPickerView?
+    private var browserView: BrowserView?
 
     private var product: Product {
         get {
@@ -55,23 +56,14 @@ final class ProductViewController: UIViewController {
 
         title = L10n.productTitle
 
-        setupSubviews()
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         navigationController?.navigationBar.prefersLargeTitles = true
+        setupSubviews()
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
         reload()
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.prefersLargeTitles = false
     }
 
     // MARK: - Private
@@ -138,15 +130,16 @@ final class ProductViewController: UIViewController {
             return
         }
 
+        openBridgeButton.isEnabled = false
         service.getBridgeToken(accessKey: accessKey, product: product) { [weak self] tokenResponse in
             guard let self = self else { return }
+            self.openBridgeButton.isEnabled = true
             guard let token = tokenResponse?.bridge_token else {
                 self.showEmptyKeyAlert()
                 return
             }
 
-            let browserController = BrowserViewController(token: token)
-            self.navigationController?.pushViewController(browserController, animated: true)
+            self.showWebView(token: token)
         }
     }
 
@@ -157,6 +150,19 @@ final class ProductViewController: UIViewController {
         })
 
         present(alertController, animated: true, completion: nil)
+    }
+
+    private func showWebView(token: String) {
+        let browserView = BrowserView(token: token)
+        self.browserView = browserView
+        browserView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(browserView)
+        NSLayoutConstraint.activate([
+            browserView.topAnchor.constraint(equalTo: view.topAnchor),
+            browserView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            browserView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            browserView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        ])
     }
 
     private func reload() {

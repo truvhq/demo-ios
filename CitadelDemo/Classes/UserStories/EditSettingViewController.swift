@@ -31,6 +31,7 @@ final class EditSettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationItem.largeTitleDisplayMode = .never
         view.backgroundColor = .main
         title = setting.type.title
         inputTextField.text = setting.value

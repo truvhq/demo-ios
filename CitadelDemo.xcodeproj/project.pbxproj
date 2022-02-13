@@ -31,11 +31,11 @@
 		0779934F27B55DB7007B18DF /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779934E27B55DB7007B18DF /* Settings.swift */; };
 		0779935327B56248007B18DF /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935227B56248007B18DF /* KeychainManager.swift */; };
 		0779935527B80BE4007B18DF /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935427B80BE4007B18DF /* Endpoint.swift */; };
-		0779935727B81073007B18DF /* BrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935627B81073007B18DF /* BrowserViewController.swift */; };
 		0779935927B82961007B18DF /* BridgeTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935827B82961007B18DF /* BridgeTokenRequest.swift */; };
 		0779935B27B85878007B18DF /* Encodable+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935A27B85878007B18DF /* Encodable+JSON.swift */; };
 		0779935D27B85F7B007B18DF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935C27B85F7B007B18DF /* NetworkService.swift */; };
 		0779936027B861E8007B18DF /* BridgeTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935F27B861E8007B18DF /* BridgeTokenResponse.swift */; };
+		0779936327B9859F007B18DF /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779936227B9859F007B18DF /* BrowserView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,11 +65,11 @@
 		0779934E27B55DB7007B18DF /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		0779935227B56248007B18DF /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		0779935427B80BE4007B18DF /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		0779935627B81073007B18DF /* BrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserViewController.swift; sourceTree = "<group>"; };
 		0779935827B82961007B18DF /* BridgeTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeTokenRequest.swift; sourceTree = "<group>"; };
 		0779935A27B85878007B18DF /* Encodable+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+JSON.swift"; sourceTree = "<group>"; };
 		0779935C27B85F7B007B18DF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0779935F27B861E8007B18DF /* BridgeTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeTokenResponse.swift; sourceTree = "<group>"; };
+		0779936227B9859F007B18DF /* BrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +141,6 @@
 				0779932427B1A6D1007B18DF /* ConsoleViewController.swift */,
 				0779932627B1A6DC007B18DF /* SettingsViewController.swift */,
 				0779933C27B43147007B18DF /* EditSettingViewController.swift */,
-				0779935627B81073007B18DF /* BrowserViewController.swift */,
 			);
 			path = UserStories;
 			sourceTree = "<group>";
@@ -162,6 +161,7 @@
 				0779934527B53598007B18DF /* SettingsPickerView.swift */,
 				0779933527B2D340007B18DF /* SettingsCellViewModel.swift */,
 				0779933327B2D165007B18DF /* MenuTableViewCell.swift */,
+				0779936227B9859F007B18DF /* BrowserView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -317,8 +317,8 @@
 				0779935327B56248007B18DF /* KeychainManager.swift in Sources */,
 				0779934D27B55CD4007B18DF /* Environment.swift in Sources */,
 				0779932A27B1AA3B007B18DF /* UIColor+Additions.swift in Sources */,
+				0779936327B9859F007B18DF /* BrowserView.swift in Sources */,
 				0779933427B2D165007B18DF /* MenuTableViewCell.swift in Sources */,
-				0779935727B81073007B18DF /* BrowserViewController.swift in Sources */,
 				0779935D27B85F7B007B18DF /* NetworkService.swift in Sources */,
 				0779934627B53598007B18DF /* SettingsPickerView.swift in Sources */,
 			);
