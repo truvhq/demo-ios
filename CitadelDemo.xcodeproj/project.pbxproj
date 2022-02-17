@@ -36,6 +36,8 @@
 		0779935D27B85F7B007B18DF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935C27B85F7B007B18DF /* NetworkService.swift */; };
 		0779936027B861E8007B18DF /* BridgeTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935F27B861E8007B18DF /* BridgeTokenResponse.swift */; };
 		0779936327B9859F007B18DF /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779936227B9859F007B18DF /* BrowserView.swift */; };
+		0779936527BE65EF007B18DF /* CitadelScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779936427BE65EF007B18DF /* CitadelScriptMessageHandler.swift */; };
+		0779936727BE67E5007B18DF /* Notification+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779936627BE67E5007B18DF /* Notification+Additions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +72,8 @@
 		0779935C27B85F7B007B18DF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0779935F27B861E8007B18DF /* BridgeTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeTokenResponse.swift; sourceTree = "<group>"; };
 		0779936227B9859F007B18DF /* BrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
+		0779936427BE65EF007B18DF /* CitadelScriptMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitadelScriptMessageHandler.swift; sourceTree = "<group>"; };
+		0779936627BE67E5007B18DF /* Notification+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Additions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 			children = (
 				0779935E27B861D3007B18DF /* Network */,
 				0779935227B56248007B18DF /* KeychainManager.swift */,
+				0779936427BE65EF007B18DF /* CitadelScriptMessageHandler.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 				0779932927B1AA3B007B18DF /* UIColor+Additions.swift */,
 				0779933E27B459A1007B18DF /* UITapGestureRecognizer+Additions.swift */,
 				0779935A27B85878007B18DF /* Encodable+JSON.swift */,
+				0779936627BE67E5007B18DF /* Notification+Additions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0731CBF3279DC3B700B1E531 /* MainViewController.swift in Sources */,
+				0779936727BE67E5007B18DF /* Notification+Additions.swift in Sources */,
 				0779935527B80BE4007B18DF /* Endpoint.swift in Sources */,
 				0779935B27B85878007B18DF /* Encodable+JSON.swift in Sources */,
 				0779933D27B43147007B18DF /* EditSettingViewController.swift in Sources */,
@@ -320,6 +327,7 @@
 				0779936327B9859F007B18DF /* BrowserView.swift in Sources */,
 				0779933427B2D165007B18DF /* MenuTableViewCell.swift in Sources */,
 				0779935D27B85F7B007B18DF /* NetworkService.swift in Sources */,
+				0779936527BE65EF007B18DF /* CitadelScriptMessageHandler.swift in Sources */,
 				0779934627B53598007B18DF /* SettingsPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

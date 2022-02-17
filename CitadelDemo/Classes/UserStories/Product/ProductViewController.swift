@@ -58,6 +58,7 @@ final class ProductViewController: UIViewController {
 
         navigationController?.navigationBar.prefersLargeTitles = true
         setupSubviews()
+        NotificationCenter.default.addObserver(self, selector: #selector(closeWebView), name: Notification.Name.Citadel.closeWidget, object: nil)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -168,6 +169,10 @@ final class ProductViewController: UIViewController {
     private func reload() {
         additionalSettingViewModels = ProductViewModelsFactory.makeAdditionalSettingViewModels(from: product, isSettingsExpanded: isSettingsExpanded)
         tableView.reloadData()
+    }
+
+    @objc private func closeWebView() {
+        browserView?.removeFromSuperview()
     }
 
 }

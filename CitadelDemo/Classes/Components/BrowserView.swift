@@ -20,8 +20,10 @@ final class BrowserView: UIView, WKUIDelegate {
     init(token: String) {
         self.token = token
 
-        let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        let configuration = WKWebViewConfiguration()
+        let handler = CitadelScriptMessageHandler()
+        configuration.userContentController.add(handler, name: "iosListener")
+        webView = WKWebView(frame: .zero, configuration: configuration)
 
         super.init(frame: .zero)
 
@@ -53,6 +55,8 @@ final class BrowserView: UIView, WKUIDelegate {
         let request = URLRequest(url: url)
 
         webView.load(request)
+        let message = "Opening Widget with baseUrl: \(Endpoint.widgetUrl) and bridgeToken \(token)"
+        NotificationCenter.default.post(name: Notification.Name.Citadel.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
     }
 
 }

@@ -23,7 +23,23 @@ final class ConsoleViewController: UIViewController {
     }()
     private var emptyStateStackView: UIStackView?
 
+    private var text = "" {
+        didSet {
+            logsTextView.text = text
+        }
+    }
+
     // MARK: - Lifecycle
+
+    init() {
+        super.init(nibName: nil, bundle: nil)
+
+        NotificationCenter.default.addObserver(self, selector: #selector(addLogs(_:)), name: Notification.Name.Citadel.log, object: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,14 +50,23 @@ final class ConsoleViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
 
         setupLayout()
-        setupEmptyLogsState()
+        if text.isEmpty {
+            setupEmptyLogsState()
+        } else {
+            logsTextView.text = text
+        }
     }
 
     // MARK: - Public
 
-    func addLogs(_ string: String) {
+    @objc func addLogs(_ notification: NSNotification) {
+        guard let message = notification.userInfo?[NotificationKeys.message.rawValue] as? String else { return }
         emptyStateStackView?.isHidden = true
 
+        if !text.isEmpty {
+            text.append("\n\n")
+        }
+        text.append(message)
     }
 
     // MARK: - Private

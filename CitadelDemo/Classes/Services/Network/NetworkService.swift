@@ -22,6 +22,10 @@ final class NetworkService {
                     let tokenResponse = try? JSONDecoder().decode(BridgeTokenResponse.self, from: data)
                 else { return completion(nil) }
 
+                if let prettyPrinted = String(data: data, encoding: .utf8 ) {
+                    let message = "Bridge Token response: \(prettyPrinted)"
+                    NotificationCenter.default.post(name: Notification.Name.Citadel.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
+                }
                 completion(tokenResponse)
             }
         }

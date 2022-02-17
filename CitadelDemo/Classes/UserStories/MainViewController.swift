@@ -11,9 +11,9 @@ final class MainViewController: UITabBarController {
 
     // MARK: - Properties
 
-    private lazy var productController = ProductViewController()
-    private lazy var consoleController = ConsoleViewController()
-    private lazy var settingsController = SettingsViewController()
+    private let productController = ProductViewController()
+    private let consoleController = ConsoleViewController()
+    private let settingsController = SettingsViewController()
 
     // MARK: - Lifecycle
 
