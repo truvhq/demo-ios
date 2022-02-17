@@ -102,6 +102,7 @@ final class EditSettingViewController: UIViewController {
         if setting.type.tappableParams.count == 1 {
             inputTextField.text = setting.type.tappableParams.first
             textFieldDidChange()
+            navigationController?.popViewController(animated: true)
             return
         }
         for param in setting.type.tappableParams {
@@ -109,6 +110,7 @@ final class EditSettingViewController: UIViewController {
             if gesture.didTapAttributedTextInLabel(label: hintLabel, inRange: rangeOfParam) {
                 inputTextField.text = param
                 textFieldDidChange()
+                navigationController?.popViewController(animated: true)
             }
         }
     }

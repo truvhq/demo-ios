@@ -18,6 +18,8 @@ final class ConsoleViewController: UIViewController {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.font = .systemFont(ofSize: 17)
         textView.backgroundColor = .main
+        textView.textContainerInset.left = 16
+        textView.textContainerInset.right = 16
 
         return textView
     }()
