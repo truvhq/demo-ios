@@ -28,6 +28,7 @@ final class BrowserView: UIView, WKUIDelegate {
         super.init(frame: .zero)
 
         webView.uiDelegate = self
+        webView.navigationDelegate = self
         setupLayout()
         startLoading()
     }
@@ -57,6 +58,29 @@ final class BrowserView: UIView, WKUIDelegate {
         webView.load(request)
         let message = "Opening Widget with baseUrl: \(Endpoint.widgetUrl) and bridgeToken \(token)"
         NotificationCenter.default.post(name: Notification.Name.Citadel.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
+    }
+
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        guard let url = navigationAction.request.url else { return nil }
+        UIApplication.shared.open(url)
+        return nil
+    }
+
+}
+
+// MARK: - WKNavigationDelegate
+
+extension BrowserView: WKNavigationDelegate {
+
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        if let url = navigationAction.request.url,
+           !["cdn.citadelid.com", "citadelid-resources.s3.us-west-2.amazonaws.com"].contains(url.host) {
+            UIApplication.shared.open(url)
+            decisionHandler(.cancel)
+            return
+        }
+
+        decisionHandler(.allow)
     }
 
 }

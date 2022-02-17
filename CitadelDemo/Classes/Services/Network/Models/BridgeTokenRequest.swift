@@ -21,23 +21,6 @@ struct BridgeTokenRequest: Encodable {
         self.account = AccountRequest(product: product)
     }
 
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(product_type, forKey: .product_type)
-        try container.encode(provider_id, forKey: .provider_id)
-        try container.encode(company_mapping_id, forKey: .company_mapping_id)
-        if let account = account {
-            try container.encode(account, forKey: .account)
-        }
-    }
-
-    enum CodingKeys: String, CodingKey {
-        case product_type
-        case provider_id
-        case company_mapping_id
-        case account
-    }
-
 }
 
 extension BridgeTokenRequest {
