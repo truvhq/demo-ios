@@ -161,7 +161,7 @@ extension SettingsViewController: UITableViewDataSource {
         else { return MenuTableViewCell() }
 
         let title: String
-        let detail: String
+        let detail: String?
 
         let section = indexPath.section
         if section == 0 {
@@ -179,7 +179,7 @@ extension SettingsViewController: UITableViewDataSource {
         cell.textLabel?.text = title
         cell.detailTextLabel?.text = detail
 
-        if detail.isEmpty {
+        if detail == nil {
             cell.accessoryType = .disclosureIndicator
         } else {
             cell.accessoryType = .none

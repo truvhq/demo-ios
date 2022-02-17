@@ -235,7 +235,7 @@ extension ProductViewController: UITableViewDataSource {
         else { return MenuTableViewCell() }
 
         let title: String
-        let detail: String
+        let detail: String?
         if indexPath.section == 0 {
             title = "Product type"
             detail = product.type.title
@@ -246,7 +246,7 @@ extension ProductViewController: UITableViewDataSource {
         cell.textLabel?.text = title
         cell.detailTextLabel?.text = detail
 
-        if detail.isEmpty {
+        if detail == nil {
             cell.accessoryType = .disclosureIndicator
         } else {
             cell.accessoryType = .none

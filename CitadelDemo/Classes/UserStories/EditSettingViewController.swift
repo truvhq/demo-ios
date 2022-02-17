@@ -118,7 +118,11 @@ final class EditSettingViewController: UIViewController {
     }
 
     @objc private func textFieldDidChange() {
-        setting.value = inputTextField.text ?? ""
+        if inputTextField.text?.isEmpty == true {
+            setting.value = nil
+        } else {
+            setting.value = inputTextField.text
+        }
     }
 
 }

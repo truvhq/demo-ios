@@ -22,7 +22,7 @@ final class NetworkService {
                     let tokenResponse = try? JSONDecoder().decode(BridgeTokenResponse.self, from: data)
                 else { return completion(nil) }
 
-                if let prettyPrinted = String(data: data, encoding: .utf8 ) {
+                if let prettyPrinted = String(data: data, encoding: .utf8) {
                     let message = "Bridge Token response: \(prettyPrinted)"
                     NotificationCenter.default.post(name: Notification.Name.Citadel.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
                 }
@@ -40,7 +40,9 @@ final class NetworkService {
         var request = URLRequest(url: tokenUrl)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue(AppState.shared.settings.clientId.value, forHTTPHeaderField: "X-Access-Client-Id")
+        if let clientId = AppState.shared.settings.clientId.value {
+            request.addValue(clientId, forHTTPHeaderField: "X-Access-Client-Id")
+        }
         request.addValue(accessKey, forHTTPHeaderField: "X-Access-Secret")
         request.httpBody = BridgeTokenRequest(product: product).toJSONData()
 

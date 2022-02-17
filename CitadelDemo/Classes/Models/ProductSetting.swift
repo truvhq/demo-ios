@@ -10,9 +10,9 @@ import Foundation
 final class ProductSetting: Codable {
 
     let type: ProductSettingType
-    var value: String
+    var value: String?
 
-    init(type: ProductSettingType, value: String = "") {
+    init(type: ProductSettingType, value: String? = nil) {
         self.type = type
         self.value = value
     }
