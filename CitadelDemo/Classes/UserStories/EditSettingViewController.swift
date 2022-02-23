@@ -37,6 +37,8 @@ final class EditSettingViewController: UIViewController {
         inputTextField.text = setting.value
 
         inputTextField.returnKeyType = .done
+        inputTextField.delegate = self
+        inputTextField.autocorrectionType = .no
         inputTextField.keyboardType = setting.type.isNumericInput ? .decimalPad : .default
         inputTextField.becomeFirstResponder()
 
@@ -125,6 +127,15 @@ final class EditSettingViewController: UIViewController {
         } else {
             setting.value = inputTextField.text
         }
+    }
+
+}
+
+extension EditSettingViewController: UITextFieldDelegate {
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        navigationController?.popViewController(animated: true)
+        return true
     }
 
 }
