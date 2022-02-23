@@ -41,7 +41,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0731CBEB279DC3B700B1E531 /* CitadelDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CitadelDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0731CBEB279DC3B700B1E531 /* Truv Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Truv Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0731CBEE279DC3B700B1E531 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0731CBF0279DC3B700B1E531 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0731CBF2279DC3B700B1E531 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		0731CBEC279DC3B700B1E531 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0731CBEB279DC3B700B1E531 /* CitadelDemo.app */,
+				0731CBEB279DC3B700B1E531 /* Truv Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,9 +233,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0731CBEA279DC3B700B1E531 /* CitadelDemo */ = {
+		0731CBEA279DC3B700B1E531 /* Truv Demo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0731CBFF279DC3B900B1E531 /* Build configuration list for PBXNativeTarget "CitadelDemo" */;
+			buildConfigurationList = 0731CBFF279DC3B900B1E531 /* Build configuration list for PBXNativeTarget "Truv Demo" */;
 			buildPhases = (
 				0731CBE7279DC3B700B1E531 /* Sources */,
 				0731CBE8279DC3B700B1E531 /* Frameworks */,
@@ -245,9 +245,9 @@
 			);
 			dependencies = (
 			);
-			name = CitadelDemo;
+			name = "Truv Demo";
 			productName = CitadelDemo;
-			productReference = 0731CBEB279DC3B700B1E531 /* CitadelDemo.app */;
+			productReference = 0731CBEB279DC3B700B1E531 /* Truv Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -265,7 +265,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0731CBE6279DC3B700B1E531 /* Build configuration list for PBXProject "CitadelDemo" */;
+			buildConfigurationList = 0731CBE6279DC3B700B1E531 /* Build configuration list for PBXProject "Truv Demo" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -278,7 +278,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0731CBEA279DC3B700B1E531 /* CitadelDemo */,
+				0731CBEA279DC3B700B1E531 /* Truv Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -469,7 +469,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3HHM2RZ73P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CitadelDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -497,7 +497,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 3HHM2RZ73P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CitadelDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -521,7 +521,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0731CBE6279DC3B700B1E531 /* Build configuration list for PBXProject "CitadelDemo" */ = {
+		0731CBE6279DC3B700B1E531 /* Build configuration list for PBXProject "Truv Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0731CBFD279DC3B900B1E531 /* Debug */,
@@ -530,7 +530,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0731CBFF279DC3B900B1E531 /* Build configuration list for PBXNativeTarget "CitadelDemo" */ = {
+		0731CBFF279DC3B900B1E531 /* Build configuration list for PBXNativeTarget "Truv Demo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0731CC00279DC3B900B1E531 /* Debug */,
