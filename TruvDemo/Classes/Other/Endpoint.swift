@@ -9,7 +9,7 @@ import Foundation
 
 enum Endpoint {
 
-    static let widgetUrl = "https://cdn-dev.truv.com"
-    static let apiHost = "https://dev.truv.com"
+    static let widgetUrl = "https://cdn.truv.com"
+    static let apiHost = "https://prod.truv.com"
     
 }
