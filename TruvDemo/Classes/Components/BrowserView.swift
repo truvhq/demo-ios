@@ -74,7 +74,7 @@ extension BrowserView: WKNavigationDelegate {
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if let url = navigationAction.request.url,
-           !["cdn.Truvid.com", "Truvid-resources.s3.us-west-2.amazonaws.com"].contains(url.host) {
+           !["cdn.truv.com", "citadel-resources.s3.us-west-2.amazonaws.com"].contains(url.host) {
             UIApplication.shared.open(url)
             decisionHandler(.cancel)
             return

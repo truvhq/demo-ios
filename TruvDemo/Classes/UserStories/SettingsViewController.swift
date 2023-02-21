@@ -74,7 +74,7 @@ final class SettingsViewController: UIViewController {
 
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapPickerDoneButton))
-        doneButton.tintColor = .accentGreen
+        doneButton.tintColor = .accent
 
         pickerAccessory.items = [flexibleSpace, doneButton]
 

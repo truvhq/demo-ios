@@ -28,7 +28,7 @@ final class ProductViewController: UIViewController {
         let button = UIButton()
 
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .accentGreen
+        button.backgroundColor = .accent
         button.layer.cornerRadius = 8
         button.titleLabel?.font = .systemFont(ofSize: 17, weight: .semibold)
         button.setTitle(L10n.openBridgeButtonTitle, for: [])
@@ -104,7 +104,7 @@ final class ProductViewController: UIViewController {
 
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(didTapPickerDoneButton))
-        doneButton.tintColor = .accentGreen
+        doneButton.tintColor = .accent
 
         pickerAccessory.items = [flexibleSpace, doneButton]
 
@@ -218,7 +218,7 @@ extension ProductViewController: UITableViewDataSource {
         button.contentHorizontalAlignment = .left
         button.titleLabel?.font = .systemFont(ofSize: 17)
         button.setTitle(title, for: [])
-        button.setTitleColor(.accentGreen, for: [])
+        button.setTitleColor(.accent, for: [])
         button.addTarget(self, action: #selector(didTapExpandButton), for: .touchUpInside)
 
         view.addSubview(button)

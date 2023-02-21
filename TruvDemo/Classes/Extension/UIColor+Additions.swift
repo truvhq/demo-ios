@@ -11,7 +11,7 @@ extension UIColor {
 
     static let main: UIColor = UIColor(red: 244, green: 244, blue: 244)
     static let textGray: UIColor = UIColor(red: 153, green: 153, blue: 153)
-    static let accentGreen: UIColor = UIColor(red: 13, green: 171, blue: 76)
+    static let accent: UIColor = UIColor(red: 44, green: 100, blue: 227)
 
     // MARK: - Private
 

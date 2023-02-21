@@ -265,7 +265,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0731CBE6279DC3B700B1E531 /* Build configuration list for PBXProject "Truv Demo" */;
+			buildConfigurationList = 0731CBE6279DC3B700B1E531 /* Build configuration list for PBXProject "TruvDemo" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -468,7 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 3HHM2RZ73P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TruvDemo/Info.plist;
@@ -496,7 +496,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 3HHM2RZ73P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TruvDemo/Info.plist;
@@ -521,7 +521,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0731CBE6279DC3B700B1E531 /* Build configuration list for PBXProject "Truv Demo" */ = {
+		0731CBE6279DC3B700B1E531 /* Build configuration list for PBXProject "TruvDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0731CBFD279DC3B900B1E531 /* Debug */,

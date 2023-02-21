@@ -92,7 +92,7 @@ final class EditSettingViewController: UIViewController {
         let attributedString = NSMutableAttributedString(string: setting.type.hint)
         for param in setting.type.tappableParams {
             let rangeOfParam = (setting.type.hint as NSString).range(of: param)
-            attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.accentGreen, range: rangeOfParam)
+            attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.accent, range: rangeOfParam)
         }
 
         hintLabel.attributedText = attributedString
