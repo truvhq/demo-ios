@@ -12,6 +12,7 @@ final class Settings: Codable {
     var selectedEnvironment: Environment
     let clientId: ProductSetting
     let accessKeys: [ProductSetting]
+    var userId: String?;
 
     init() {
         selectedEnvironment = .sandbox
@@ -21,6 +22,7 @@ final class Settings: Codable {
             ProductSetting(type: .developmentEnvironment),
             ProductSetting(type: .productionEnvironment)
         ]
+        userId = nil
     }
 
     var keyForSelectedEnvironment: String? {

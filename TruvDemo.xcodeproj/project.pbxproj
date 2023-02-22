@@ -38,6 +38,8 @@
 		0779936327B9859F007B18DF /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779936227B9859F007B18DF /* BrowserView.swift */; };
 		0779936527BE65EF007B18DF /* TruvScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779936427BE65EF007B18DF /* TruvScriptMessageHandler.swift */; };
 		0779936727BE67E5007B18DF /* Notification+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779936627BE67E5007B18DF /* Notification+Additions.swift */; };
+		2882A29029A57DC1006DD1EE /* CreateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882A28F29A57DC1006DD1EE /* CreateUserRequest.swift */; };
+		2882A29229A57E0E006DD1EE /* CreateUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882A29129A57E0E006DD1EE /* CreateUserResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		0779936227B9859F007B18DF /* BrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
 		0779936427BE65EF007B18DF /* TruvScriptMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruvScriptMessageHandler.swift; sourceTree = "<group>"; };
 		0779936627BE67E5007B18DF /* Notification+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Additions.swift"; sourceTree = "<group>"; };
+		2882A28F29A57DC1006DD1EE /* CreateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserRequest.swift; sourceTree = "<group>"; };
+		2882A29129A57E0E006DD1EE /* CreateUserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +230,8 @@
 			children = (
 				0779935827B82961007B18DF /* BridgeTokenRequest.swift */,
 				0779935F27B861E8007B18DF /* BridgeTokenResponse.swift */,
+				2882A28F29A57DC1006DD1EE /* CreateUserRequest.swift */,
+				2882A29129A57E0E006DD1EE /* CreateUserResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 				0779935527B80BE4007B18DF /* Endpoint.swift in Sources */,
 				0779935B27B85878007B18DF /* Encodable+JSON.swift in Sources */,
 				0779933D27B43147007B18DF /* EditSettingViewController.swift in Sources */,
+				2882A29229A57E0E006DD1EE /* CreateUserResponse.swift in Sources */,
 				0779934427B5023F007B18DF /* Strings.swift in Sources */,
 				0779935927B82961007B18DF /* BridgeTokenRequest.swift in Sources */,
 				0779934A27B55380007B18DF /* AppState.swift in Sources */,
@@ -326,6 +333,7 @@
 				0779932A27B1AA3B007B18DF /* UIColor+Additions.swift in Sources */,
 				0779936327B9859F007B18DF /* BrowserView.swift in Sources */,
 				0779933427B2D165007B18DF /* MenuTableViewCell.swift in Sources */,
+				2882A29029A57DC1006DD1EE /* CreateUserRequest.swift in Sources */,
 				0779935D27B85F7B007B18DF /* NetworkService.swift in Sources */,
 				0779936527BE65EF007B18DF /* TruvScriptMessageHandler.swift in Sources */,
 				0779934627B53598007B18DF /* SettingsPickerView.swift in Sources */,

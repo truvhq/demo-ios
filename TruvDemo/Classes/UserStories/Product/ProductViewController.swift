@@ -126,21 +126,50 @@ final class ProductViewController: UIViewController {
     }
 
     @objc private func didTapOpenBridgeButton() {
-        guard let accessKey = AppState.shared.settings.keyForSelectedEnvironment, !accessKey.isEmpty else {
-            showEmptyKeyAlert()
-            return
-        }
-
-        openBridgeButton.isEnabled = false
-        service.getBridgeToken(accessKey: accessKey, product: product) { [weak self] tokenResponse in
-            guard let self = self else { return }
-            self.openBridgeButton.isEnabled = true
-            guard let token = tokenResponse?.bridge_token else {
-                self.showEmptyKeyAlert()
+        Task {
+            guard let accessKey = AppState.shared.settings.keyForSelectedEnvironment, !accessKey.isEmpty else {
+                showEmptyKeyAlert()
                 return
             }
-
-            self.showWebView(token: token)
+            
+            openBridgeButton.isEnabled = false
+            do {
+                var userId = AppState.shared.settings.userId
+                if (userId == nil) {
+                    let userResponse = try await service.createUser(userId: "demo-app")
+                    if (userResponse == nil) {
+                        let message = "Create user error"
+                        NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
+                        return
+                    }
+                    
+                    userId = userResponse!.id
+                    
+                    let settings = AppState.shared.settings
+                    settings.userId = userId
+                
+                    KeychainManager().saveSettings(settings)
+                    
+                    let message = "Created user with id \(userId ?? "")"
+                    NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
+                }
+                
+                let tokenResponse = try await service.createBridgeToken(userId: userId!, product: product)
+                
+                let message = "Created bridge token with id \(tokenResponse?.bridge_token ?? "")"
+                NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
+                
+                self.openBridgeButton.isEnabled = true
+                guard let token = tokenResponse?.bridge_token else {
+                    self.showEmptyKeyAlert()
+                    return
+                }
+                
+                self.showWebView(token: token)
+            } catch {
+                let message = "Create bridge token error \(error.localizedDescription)"
+                NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
+            }   
         }
     }
 
