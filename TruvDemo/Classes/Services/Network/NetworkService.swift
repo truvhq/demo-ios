@@ -11,31 +11,36 @@ final class NetworkService {
 
     // MARK: - Public
 
-    func getBridgeToken(accessKey: String, product: Product, completion: @escaping (BridgeTokenResponse?) -> Void) {
-        guard let request = makeBridgeTokenRequest(accessKey: accessKey, product: product) else { return }
+    func createBridgeToken(userId: String, product: Product) async throws -> BridgeTokenResponse? {
+        let body = BridgeTokenRequest(product: product).toJSONData()
+        guard let request = makeRequest(path: "/v1/users/\(userId)/tokens/", body: body) else { return nil }
 
         let session = URLSession.shared
-        let task = session.dataTask(with: request) { (data, response, error) in
-            DispatchQueue.main.async {
-                guard
-                    let data = data,
-                    let tokenResponse = try? JSONDecoder().decode(BridgeTokenResponse.self, from: data)
-                else { return completion(nil) }
-
-                if let prettyPrinted = String(data: data, encoding: .utf8) {
-                    let message = "Bridge Token response: \(prettyPrinted)"
-                    NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
-                }
-                completion(tokenResponse)
-            }
-        }
-        task.resume()
+        let (data, _) = try await session.data(for: request)
+        guard
+            let tokenResponse = try? JSONDecoder().decode(BridgeTokenResponse.self, from: data)
+        else { return nil }
+        
+        return tokenResponse
+    }
+    
+    func createUser(userId: String) async throws -> CreateUserResponse? {
+        let body = CreateUserRequest(userId: userId).toJSONData()
+        guard let request = makeRequest(path: "/v1/users/", body: body) else { return nil }
+        
+        let session = URLSession.shared
+        let (data, _) = try await session.data(for: request)
+        guard
+            let createUserResponse = try? JSONDecoder().decode(CreateUserResponse.self, from: data)
+        else { return nil }
+        
+        return createUserResponse
     }
 
     // MARK: - Private
 
-    private func makeBridgeTokenRequest(accessKey: String, product: Product) -> URLRequest? {
-        guard let tokenUrl = URL(string:"\(Endpoint.apiHost)/v1/bridge-tokens/") else { return nil }
+    private func makeRequest(path: String, body: Data?) -> URLRequest? {
+        guard let tokenUrl = URL(string:"\(Endpoint.apiHost)\(path)") else { return nil }
 
         var request = URLRequest(url: tokenUrl)
         request.httpMethod = "POST"
@@ -43,8 +48,11 @@ final class NetworkService {
         if let clientId = AppState.shared.settings.clientId.value {
             request.addValue(clientId, forHTTPHeaderField: "X-Access-Client-Id")
         }
-        request.addValue(accessKey, forHTTPHeaderField: "X-Access-Secret")
-        request.httpBody = BridgeTokenRequest(product: product).toJSONData()
+        if let clientSecret = AppState.shared.settings.keyForSelectedEnvironment {
+            request.addValue(clientSecret, forHTTPHeaderField: "X-Access-Secret")
+        }
+        
+        request.httpBody = body
 
         return request
     }

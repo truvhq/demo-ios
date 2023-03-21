@@ -90,7 +90,7 @@ final class ConsoleViewController: UIViewController {
         label.text = L10n.emptyConsoleTitle
 
         let button = UIButton()
-        button.setTitleColor(.accentGreen, for: [])
+        button.setTitleColor(.accent, for: [])
         button.setTitle(L10n.emptyConsoleButtonTitle, for: [])
         button.addTarget(self, action: #selector(openProductPage), for: .touchUpInside)
 
