@@ -24,6 +24,15 @@ final class SettingsViewController: UIViewController {
 
         return tableView
     }()
+    private lazy var standView: UITextView = {
+        let textView = UITextView()
+        textView.frame = CGRect(x: 0, y: view.frame.size.height - 110 , width: view.frame.width, height: 50)
+        textView.backgroundColor = .main
+        textView.text = settings.stand.title
+        textView.textColor = .textGray
+        
+        return textView
+    }()
     private var picker: SettingsPickerView?
 
     private var settings: Settings {
@@ -37,6 +46,7 @@ final class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.becomeFirstResponder()
 
         title = L10n.settingsTitle
 
@@ -49,11 +59,35 @@ final class SettingsViewController: UIViewController {
 
         didUpdateSettings()
     }
+    
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            settings.stand = {
+                switch settings.stand {
+                case .production:
+                    return Stand.development
+                case .development:
+                    return Stand.stage
+                case .stage:
+                    return Stand.production
+                }
+            }()
+            
+            didUpdateSettings()
+        }
+    }
 
     // MARK: - Private
 
     private func setupSubviews() {
         view.addSubview(tableView)
+        view.addSubview(standView)
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -96,8 +130,10 @@ final class SettingsViewController: UIViewController {
     }
 
     private func didUpdateSettings() {
+        settings.userId = nil
         keychainManager.saveSettings(settings)
         tableView.reloadData()
+        standView.text = settings.stand.title
     }
 
 }

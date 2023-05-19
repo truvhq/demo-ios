@@ -36,3 +36,42 @@ enum Environment: CaseIterable, Codable {
     }
 
 }
+
+enum Stand: CaseIterable, Codable {
+    case development
+    case stage
+    case production
+    
+    var apiUrl: String {
+        switch self {
+        case .production:
+            return "https://prod.truv.com"
+        case .stage:
+            return "https://stage.truv.com"
+        case .development:
+            return "https://dev.truv.com"
+        }
+    }
+    
+    var cdnUrl: String {
+        switch self {
+        case .production:
+            return "https://cdn.truv.com"
+        case .stage:
+            return "https://cdn-stage.truv.com"
+        case .development:
+            return "https://cdn-dev.truv.com"
+        }
+    }
+    
+    var title: String {
+        switch self {
+        case .production:
+            return "Production"
+        case .stage:
+            return "Stage"
+        case .development:
+            return "Development"
+        }
+    }
+}

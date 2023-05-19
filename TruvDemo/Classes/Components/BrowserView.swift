@@ -52,11 +52,11 @@ final class BrowserView: UIView, WKUIDelegate {
     }
 
     private func startLoading() {
-        guard let url = URL(string: "\(Endpoint.widgetUrl)/mobile.html?bridge_token=\(token)") else { return }
+        guard let url = URL(string: "\(AppState.shared.settings.stand.cdnUrl)/mobile.html?bridge_token=\(token)") else { return }
         let request = URLRequest(url: url)
 
         webView.load(request)
-        let message = "Opening Widget with baseUrl: \(Endpoint.widgetUrl) and bridgeToken \(token)"
+        let message = "Opening Widget with baseUrl: \(AppState.shared.settings.stand.cdnUrl) and bridgeToken \(token)"
         NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
     }
 
@@ -73,8 +73,9 @@ final class BrowserView: UIView, WKUIDelegate {
 extension BrowserView: WKNavigationDelegate {
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        let cdnHost = AppState.shared.settings.stand.cdnUrl.replacingOccurrences(of: "https://", with: "")
         if let url = navigationAction.request.url,
-           !["cdn.truv.com", "citadel-resources.s3.us-west-2.amazonaws.com"].contains(url.host) {
+           ![cdnHost, "citadel-resources.s3.us-west-2.amazonaws.com", "magic-login-proxy.truv.com", "magic-login-proxy-dev.truv.com"].contains(url.host) {
             UIApplication.shared.open(url)
             decisionHandler(.cancel)
             return
