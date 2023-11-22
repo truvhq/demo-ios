@@ -136,7 +136,7 @@ final class ProductViewController: UIViewController {
             do {
                 var userId = AppState.shared.settings.userId
                 if (userId == nil) {
-                    let userResponse = try await service.createUser(userId: "demo-app")
+                    let userResponse = try await service.createUser(userId: UUID().uuidString)
                     if (userResponse == nil) {
                         let message = "Create user error"
                         NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])

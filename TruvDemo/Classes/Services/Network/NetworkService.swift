@@ -17,6 +17,7 @@ final class NetworkService {
 
         let session = URLSession.shared
         let (data, _) = try await session.data(for: request)
+
         guard
             let tokenResponse = try? JSONDecoder().decode(BridgeTokenResponse.self, from: data)
         else { return nil }
@@ -40,7 +41,7 @@ final class NetworkService {
     // MARK: - Private
 
     private func makeRequest(path: String, body: Data?) -> URLRequest? {
-        guard let tokenUrl = URL(string:"\(Endpoint.apiHost)\(path)") else { return nil }
+        guard let tokenUrl = URL(string:"\(AppState.shared.settings.stand.apiUrl)\(path)") else { return nil }
 
         var request = URLRequest(url: tokenUrl)
         request.httpMethod = "POST"
