@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TruvSDK
 
 final class ProductViewController: UIViewController {
 
@@ -38,7 +39,7 @@ final class ProductViewController: UIViewController {
     }()
     private var isSettingsExpanded = false
     private var picker: SettingsPickerView?
-    private var browserView: BrowserView?
+    private var truvBridgeView: TruvBridgeView?
 
     private var product: Product {
         get {
@@ -183,15 +184,15 @@ final class ProductViewController: UIViewController {
     }
 
     private func showWebView(token: String) {
-        let browserView = BrowserView(token: token)
-        self.browserView = browserView
-        browserView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(browserView)
+        let truvBridgeView = TruvBridgeView(token: token, delegate: self)
+        self.truvBridgeView = truvBridgeView
+        truvBridgeView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(truvBridgeView)
         NSLayoutConstraint.activate([
-            browserView.topAnchor.constraint(equalTo: view.topAnchor),
-            browserView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            browserView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            browserView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            truvBridgeView.topAnchor.constraint(equalTo: view.topAnchor),
+            truvBridgeView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            truvBridgeView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            truvBridgeView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
 
@@ -201,7 +202,7 @@ final class ProductViewController: UIViewController {
     }
 
     @objc private func closeWebView() {
-        browserView?.removeFromSuperview()
+        truvBridgeView?.removeFromSuperview()
     }
 
 }
@@ -282,6 +283,14 @@ extension ProductViewController: UITableViewDataSource {
         }
 
         return cell
+    }
+
+}
+
+extension ProductViewController: TruvDelegate {
+
+    func onEvent(_ event: TruvSDK.TruvEvent) {
+        TruvScriptMessageHandler.handleTruvSDKEvent(event: event)
     }
 
 }

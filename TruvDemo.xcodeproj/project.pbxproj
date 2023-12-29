@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -34,11 +34,12 @@
 		0779935B27B85878007B18DF /* Encodable+JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935A27B85878007B18DF /* Encodable+JSON.swift */; };
 		0779935D27B85F7B007B18DF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935C27B85F7B007B18DF /* NetworkService.swift */; };
 		0779936027B861E8007B18DF /* BridgeTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779935F27B861E8007B18DF /* BridgeTokenResponse.swift */; };
-		0779936327B9859F007B18DF /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779936227B9859F007B18DF /* BrowserView.swift */; };
 		0779936527BE65EF007B18DF /* TruvScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779936427BE65EF007B18DF /* TruvScriptMessageHandler.swift */; };
 		0779936727BE67E5007B18DF /* Notification+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779936627BE67E5007B18DF /* Notification+Additions.swift */; };
 		2882A29029A57DC1006DD1EE /* CreateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882A28F29A57DC1006DD1EE /* CreateUserRequest.swift */; };
 		2882A29229A57E0E006DD1EE /* CreateUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882A29129A57E0E006DD1EE /* CreateUserResponse.swift */; };
+		A7304F292B3F6426003A6B85 /* TruvSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A7304F282B3F6426003A6B85 /* TruvSDK */; };
+		A7304F2C2B3F6523003A6B85 /* TruvSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A7304F2B2B3F6523003A6B85 /* TruvSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,7 +72,6 @@
 		0779935A27B85878007B18DF /* Encodable+JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+JSON.swift"; sourceTree = "<group>"; };
 		0779935C27B85F7B007B18DF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		0779935F27B861E8007B18DF /* BridgeTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeTokenResponse.swift; sourceTree = "<group>"; };
-		0779936227B9859F007B18DF /* BrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
 		0779936427BE65EF007B18DF /* TruvScriptMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruvScriptMessageHandler.swift; sourceTree = "<group>"; };
 		0779936627BE67E5007B18DF /* Notification+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Additions.swift"; sourceTree = "<group>"; };
 		2882A28F29A57DC1006DD1EE /* CreateUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateUserRequest.swift; sourceTree = "<group>"; };
@@ -83,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7304F2C2B3F6523003A6B85 /* TruvSDK in Frameworks */,
+				A7304F292B3F6426003A6B85 /* TruvSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +171,6 @@
 				0779934527B53598007B18DF /* SettingsPickerView.swift */,
 				0779933527B2D340007B18DF /* SettingsCellViewModel.swift */,
 				0779933327B2D165007B18DF /* MenuTableViewCell.swift */,
-				0779936227B9859F007B18DF /* BrowserView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -249,6 +250,10 @@
 			dependencies = (
 			);
 			name = "Truv Demo";
+			packageProductDependencies = (
+				A7304F282B3F6426003A6B85 /* TruvSDK */,
+				A7304F2B2B3F6523003A6B85 /* TruvSDK */,
+			);
 			productName = TruvDemo;
 			productReference = 0731CBEB279DC3B700B1E531 /* Truv Demo.app */;
 			productType = "com.apple.product-type.application";
@@ -277,6 +282,9 @@
 				Base,
 			);
 			mainGroup = 0731CBE2279DC3B700B1E531;
+			packageReferences = (
+				A7304F2A2B3F6523003A6B85 /* XCLocalSwiftPackageReference "../ios-sdk" */,
+			);
 			productRefGroup = 0731CBEC279DC3B700B1E531 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -327,7 +335,6 @@
 				0779935327B56248007B18DF /* KeychainManager.swift in Sources */,
 				0779934D27B55CD4007B18DF /* Environment.swift in Sources */,
 				0779932A27B1AA3B007B18DF /* UIColor+Additions.swift in Sources */,
-				0779936327B9859F007B18DF /* BrowserView.swift in Sources */,
 				0779933427B2D165007B18DF /* MenuTableViewCell.swift in Sources */,
 				2882A29029A57DC1006DD1EE /* CreateUserRequest.swift in Sources */,
 				0779935D27B85F7B007B18DF /* NetworkService.swift in Sources */,
@@ -544,6 +551,24 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		A7304F2A2B3F6523003A6B85 /* XCLocalSwiftPackageReference "../ios-sdk" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../ios-sdk";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A7304F282B3F6426003A6B85 /* TruvSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TruvSDK;
+		};
+		A7304F2B2B3F6523003A6B85 /* TruvSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TruvSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0731CBE3279DC3B700B1E531 /* Project object */;
 }
