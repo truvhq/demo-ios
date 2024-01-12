@@ -29,6 +29,7 @@ enum ProductSettingType: Codable {
     case routingNumber
     case accountNumber
     case bankName
+    case bankAddress
     case accountType
     case depositType
 
@@ -54,6 +55,8 @@ enum ProductSettingType: Codable {
             return L10n.accountNumber
         case .bankName:
             return L10n.bankName
+        case .bankAddress:
+            return L10n.bankAddress
         case .accountType:
             return L10n.accountType
         case .depositType:

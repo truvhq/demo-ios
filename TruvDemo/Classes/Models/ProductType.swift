@@ -14,7 +14,9 @@ enum ProductType: CaseIterable {
     case directDepositSwitch
     case paycheckLinkedLoan
     case employeeDirectory
-    case payrollHistory
+    case transactions
+    case assets
+    case insurance
 
     var title: String {
         switch self {
@@ -28,8 +30,12 @@ enum ProductType: CaseIterable {
             return "Paycheck Linked Loan"
         case .employeeDirectory:
             return "Employee directory"
-        case .payrollHistory:
-            return "Payroll history"
+        case .transactions:
+            return "Transactions"
+        case .assets:
+            return "Assets"
+        case .insurance:
+            return "Insurance"
         }
     }
 
@@ -44,9 +50,22 @@ enum ProductType: CaseIterable {
 
     var avaliableSettings: Set<ProductSettingType> {
         if hasAdditionalSettings {
-            return [.companyMappingId, .providerId, .depositValue, .routingNumber, .accountNumber, .bankName, .accountType]
+            return [
+                .companyMappingId,
+                .providerId,
+                .depositValue,
+                .routingNumber,
+                .accountNumber,
+                .bankName,
+                .bankAddress,
+                .accountType
+            ]
         } else {
-            return [.companyMappingId, .providerId]
+            return [
+                .companyMappingId,
+                .providerId,
+                .bankAddress
+            ]
         }
     }
 
@@ -60,8 +79,14 @@ enum ProductType: CaseIterable {
             return "deposit_switch"
         case .paycheckLinkedLoan:
             return "pll"
-        case .employeeDirectory, .payrollHistory:
+        case .employeeDirectory:
             return "admin"
+        case .transactions:
+            return "transactions"
+        case .assets:
+            return "assets"
+        case .insurance:
+            return "insurance"
         }
     }
 
