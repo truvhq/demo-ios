@@ -39,7 +39,6 @@ final class ProductViewController: UIViewController {
     }()
     private var isSettingsExpanded = false
     private var picker: SettingsPickerView?
-    private var truvBridgeView: TruvBridgeView?
 
     private var product: Product {
         get {
@@ -184,16 +183,10 @@ final class ProductViewController: UIViewController {
     }
 
     private func showWebView(token: String) {
-        let truvBridgeView = TruvBridgeView(token: token, delegate: self)
-        self.truvBridgeView = truvBridgeView
-        truvBridgeView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(truvBridgeView)
-        NSLayoutConstraint.activate([
-            truvBridgeView.topAnchor.constraint(equalTo: view.topAnchor),
-            truvBridgeView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            truvBridgeView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            truvBridgeView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ])
+        let truvBridgeController = TruvBridgeController(token: token, delegate: self)
+        truvBridgeController.modalPresentationStyle = .fullScreen
+
+        present(truvBridgeController, animated: true)
     }
 
     private func reload() {
@@ -202,7 +195,7 @@ final class ProductViewController: UIViewController {
     }
 
     @objc private func closeWebView() {
-        truvBridgeView?.removeFromSuperview()
+        dismiss(animated: true)
     }
 
 }

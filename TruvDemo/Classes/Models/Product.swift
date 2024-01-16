@@ -9,7 +9,7 @@ import Foundation
 
 final class Product {
 
-    var type: ProductType = .employeeDirectory
+    var type: ProductType = .incomeAndEmployment
 
     let settings = [
         ProductSetting(type: .companyMappingId),
