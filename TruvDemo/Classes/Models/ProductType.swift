@@ -63,8 +63,7 @@ enum ProductType: CaseIterable {
         } else {
             return [
                 .companyMappingId,
-                .providerId,
-                .bankAddress
+                .providerId
             ]
         }
     }
