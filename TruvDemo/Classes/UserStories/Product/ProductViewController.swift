@@ -167,6 +167,7 @@ final class ProductViewController: UIViewController {
                 
                 self.showWebView(token: token)
             } catch {
+                self.openBridgeButton.isEnabled = true
                 let message = "Create bridge token error \(error.localizedDescription)"
                 NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
             }   

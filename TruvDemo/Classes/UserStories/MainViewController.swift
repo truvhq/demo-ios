@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class MainViewController: UITabBarController {
 
@@ -13,7 +14,7 @@ final class MainViewController: UITabBarController {
 
     private let productController = ProductViewController()
     private let consoleController = ConsoleViewController()
-    private let settingsController = SettingsViewController()
+    private let settingsController = SettingsHostingController()
 
     // MARK: - Lifecycle
 

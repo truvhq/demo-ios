@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Environment: CaseIterable, Codable {
+enum Environment: CaseIterable, Codable, Hashable {
 
     case sandbox
     case development
@@ -37,7 +37,7 @@ enum Environment: CaseIterable, Codable {
 
 }
 
-enum Stand: CaseIterable, Codable {
+enum Stand: CaseIterable, Codable, Hashable {
     case development
     case stage
     case production

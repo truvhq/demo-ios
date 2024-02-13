@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ProductSetting: Codable {
+final class ProductSetting: Codable, Hashable {
 
     let type: ProductSettingType
     var value: String?
@@ -17,9 +17,19 @@ final class ProductSetting: Codable {
         self.value = value
     }
 
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(type)
+        hasher.combine(value)
+    }
+
+    static func == (lhs: ProductSetting, rhs: ProductSetting) -> Bool {
+        lhs.type == rhs.type &&
+        lhs.value == rhs.value
+    }
+
 }
 
-enum ProductSettingType: Codable {
+enum ProductSettingType: Codable, Hashable {
 
     // Product
 
