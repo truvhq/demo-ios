@@ -1,45 +1,30 @@
 import WebKit
+import TruvSDK
 
-final class TruvScriptMessageHandler: NSObject, WKScriptMessageHandler {
+final class TruvScriptMessageHandler {
 
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        guard
-            let body = message.body as? [String: Any],
-            let eventName = body["event"] as? String,
-            let name = WebViewMessageHandlers(rawValue: eventName)
-        else { return }
-
-        switch name {
-        case .onClose:
-            NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: "widget closed"])
-            NotificationCenter.default.post(name: Notification.Name.Truv.closeWidget, object: nil)
-        case .onError:
-            NotificationCenter.default.post(name: Notification.Name.Truv.closeWidget, object: nil)
-        case .onEvent:
-            if
-                let body = message.body as? [String: Any],
-                let payload = body["payload"],
-                let data = try? JSONSerialization.data(withJSONObject: payload, options: .prettyPrinted),
-                let prettyPrinted = String(data: data, encoding: .utf8) {
-                NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: prettyPrinted])
-            }
-        case .onLoad:
-            NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: "widget opened"])
-        case .onSuccess:
-            NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: "widget succeeded"])
-            NotificationCenter.default.post(name: Notification.Name.Truv.closeWidget, object: nil)
+    static func handleTruvSDKEvent(event: TruvSDK.TruvEvent) {
+        switch event {
+            case .onClose:
+                NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: "widget closed"])
+                NotificationCenter.default.post(name: Notification.Name.Truv.closeWidget, object: nil)
+            case .onError:
+                NotificationCenter.default.post(name: Notification.Name.Truv.closeWidget, object: nil)
+            case .onEvent(let payload):
+                let jsonEncoder = JSONEncoder()
+                jsonEncoder.keyEncodingStrategy = .convertToSnakeCase
+                if
+                    let payload = payload,
+                    let encodedObject = try? jsonEncoder.encode(payload),
+                    let prettyPrinted = NSString(data: encodedObject, encoding: String.Encoding.utf8.rawValue) {
+                    NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: prettyPrinted])
+                }
+            case .onLoad:
+                NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: "widget opened"])
+            case .onSuccess:
+                NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: "widget succeeded"])
+                NotificationCenter.default.post(name: Notification.Name.Truv.closeWidget, object: nil)
         }
-
     }
-
-}
-
-enum WebViewMessageHandlers: String {
-
-    case onClose
-    case onError
-    case onEvent
-    case onLoad
-    case onSuccess
 
 }

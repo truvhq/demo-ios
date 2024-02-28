@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import TruvSDK
 
 final class ProductViewController: UIViewController {
 
@@ -38,7 +39,6 @@ final class ProductViewController: UIViewController {
     }()
     private var isSettingsExpanded = false
     private var picker: SettingsPickerView?
-    private var browserView: BrowserView?
 
     private var product: Product {
         get {
@@ -167,6 +167,7 @@ final class ProductViewController: UIViewController {
                 
                 self.showWebView(token: token)
             } catch {
+                self.openBridgeButton.isEnabled = true
                 let message = "Create bridge token error \(error.localizedDescription)"
                 NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
             }   
@@ -183,16 +184,10 @@ final class ProductViewController: UIViewController {
     }
 
     private func showWebView(token: String) {
-        let browserView = BrowserView(token: token)
-        self.browserView = browserView
-        browserView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(browserView)
-        NSLayoutConstraint.activate([
-            browserView.topAnchor.constraint(equalTo: view.topAnchor),
-            browserView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            browserView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            browserView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ])
+        let truvBridgeController = TruvBridgeController(token: token, delegate: self)
+        truvBridgeController.modalPresentationStyle = .fullScreen
+
+        present(truvBridgeController, animated: true)
     }
 
     private func reload() {
@@ -201,7 +196,7 @@ final class ProductViewController: UIViewController {
     }
 
     @objc private func closeWebView() {
-        browserView?.removeFromSuperview()
+        dismiss(animated: true)
     }
 
 }
@@ -282,6 +277,14 @@ extension ProductViewController: UITableViewDataSource {
         }
 
         return cell
+    }
+
+}
+
+extension ProductViewController: TruvDelegate {
+
+    func onEvent(_ event: TruvSDK.TruvEvent) {
+        TruvScriptMessageHandler.handleTruvSDKEvent(event: event)
     }
 
 }

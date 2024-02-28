@@ -10,6 +10,8 @@ enum L10n {
     static let productTitle = "Product"
     static let consoleTitle = "Console"
     static let settingsTitle = "Settings"
+    static let addNewConfigurationTitle = "Add new configuration"
+    static let editConfigurationTitle = "Edit configuration"
     static let openBridgeButtonTitle = "Open Truv Bridge"
     static let hideAdditionalSettings = "Hide additional settings"
     static let showAdditionalSettings = "Show additional settings"
@@ -24,6 +26,7 @@ enum L10n {
     static let routingNumber = "Routing Number"
     static let accountNumber = "Account Number"
     static let bankName = "Bank Name"
+    static let bankAddress = "Bank Address"
     static let accountType = "Account type"
     static let depositType = "Deposit type"
 
@@ -38,5 +41,9 @@ enum L10n {
     static let clientId = "Client ID"
     static let accessKeys = "ACCESS KEYS"
 
+    static let accessKey = "Access Key"
+    static let stand = "Stand"
+    static let configurations = "Configurations"
+    static let empty = "Empty"
 
 }

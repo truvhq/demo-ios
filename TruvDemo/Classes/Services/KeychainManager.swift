@@ -16,9 +16,22 @@ final class KeychainManager {
         save(key: Constants.settingsKey, data: encodedData)
     }
 
+    func saveSettingsArray(_ settings: [Settings]) {
+        let encodedData = try? JSONEncoder().encode(settings)
+        save(key: Constants.allSettingsVariantsKey, data: encodedData)
+    }
+
     func retrieveSettings() -> Settings? {
         guard let data = load(key: Constants.settingsKey) else { return nil }
         return try? JSONDecoder().decode(Settings.self, from: data)
+    }
+
+    func retrieveAllSettings() -> [Settings] {
+        guard let data = load(key: Constants.allSettingsVariantsKey) else {
+            return []
+        }
+        let settingsArray = try? JSONDecoder().decode([Settings].self, from: data)
+        return settingsArray ?? []
     }
 
     // MARK: - Private
@@ -78,6 +91,7 @@ private extension KeychainManager {
 
     enum Constants {
         static let settingsKey = "KeychainManager.settingsKey"
+        static let allSettingsVariantsKey = "KeychainManager.allSettingsVariantsKey"
     }
 
 }
