@@ -84,7 +84,7 @@ class AddNewSettingViewModel: ObservableObject {
             newSettings.accessKeys.forEach { $0.value = accessKey }
         }
 
-        if let index = settings.firstIndex(where: { $0 == existingSettings}) {
+        if let index = settings.firstIndex(where: { $0 == existingSettings }) {
             settings[index] = newSettings
             keychainManager.saveSettingsArray(settings)
         }
