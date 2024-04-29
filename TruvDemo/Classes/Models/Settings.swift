@@ -51,4 +51,20 @@ final class Settings: Codable, Hashable {
         lhs.keyName == rhs.keyName
     }
 
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(selectedEnvironment)
+        hasher.combine(clientId)
+        hasher.combine(accessKeys)
+        hasher.combine(userId)
+        hasher.combine(stand)
+    }
+
+    static func == (lhs: Settings, rhs: Settings) -> Bool {
+        lhs.selectedEnvironment == rhs.selectedEnvironment &&
+        lhs.clientId == rhs.clientId &&
+        lhs.accessKeys == rhs.accessKeys &&
+        lhs.userId == rhs.userId &&
+        lhs.stand == rhs.stand
+    }
+
 }

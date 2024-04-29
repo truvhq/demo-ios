@@ -185,7 +185,13 @@ final class ProductViewController: UIViewController {
     }
 
     private func showWebView(token: String) {
-        let truvBridgeController = TruvBridgeController(token: token, delegate: self)
+        let truvBridgeController = TruvBridgeController(
+            token: token,
+            delegate: self,
+            config: TruvSDKConfig(
+                baseURL: AppState.shared.settings.stand.cdnUrl
+            )
+        )
         truvBridgeController.modalPresentationStyle = .fullScreen
 
         present(truvBridgeController, animated: true)
