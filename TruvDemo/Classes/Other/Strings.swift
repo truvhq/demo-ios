@@ -42,6 +42,7 @@ enum L10n {
     static let accessKeys = "ACCESS KEYS"
 
     static let accessKey = "Access Key"
+    static let keyName = "Key Name"
     static let stand = "Stand"
     static let configurations = "Configurations"
     static let empty = "Empty"

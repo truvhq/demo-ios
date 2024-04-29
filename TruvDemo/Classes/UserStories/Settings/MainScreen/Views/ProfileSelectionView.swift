@@ -41,6 +41,13 @@ struct ProfileSelectionView: View {
 
     func createTextsView() -> some View {
         VStack(alignment: .leading) {
+            Text(L10n.keyName)
+                .foregroundColor(.gray)
+                .font(.caption2)
+            Text(dataItem.settings.keyName ?? L10n.empty)
+                .foregroundColor(.black)
+                .font(.caption)
+                .padding(.bottom, 4)
             Text(L10n.clientId)
                 .foregroundColor(.gray)
                 .font(.caption2)

@@ -140,6 +140,7 @@ final class ProductViewController: UIViewController {
                     if (userResponse == nil) {
                         let message = "Create user error"
                         NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
+                        openBridgeButton.isEnabled = true
                         return
                     }
                     

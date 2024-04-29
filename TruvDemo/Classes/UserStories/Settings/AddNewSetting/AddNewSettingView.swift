@@ -21,6 +21,7 @@ struct AddNewSettingView: View {
             createStandView()
             createCliendIdView()
             createAccessKeyView()
+            createNameView()
 
             Spacer()
 
@@ -79,6 +80,20 @@ struct AddNewSettingView: View {
             TextField(
                 L10n.accessKey,
                 text: $viewModel.accessKey,
+                onEditingChanged: { _ in },
+                onCommit: { }
+            )
+        }
+    }
+
+    private func createNameView() -> some View {
+        VStack(alignment: .leading) {
+            Text(L10n.keyName)
+                .font(.headline)
+                .padding(.vertical, 8)
+            TextField(
+                L10n.keyName,
+                text: $viewModel.keyName,
                 onEditingChanged: { _ in },
                 onCommit: { }
             )
