@@ -1,14 +1,15 @@
 {
+  "originHash" : "08e63fc88c345c663c3e0c07b6d6cccaea4c020e45b2bd4d9077296277891517",
   "pins" : [
     {
       "identity" : "ios-sdk",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/truvhq/ios-sdk",
       "state" : {
-        "revision" : "9b85e307e1e2d3bb94fae8a1b651f029cb068c0f",
-        "version" : "1.2.4"
+        "revision" : "1273615ca1c2923015cb4017b57d9ba5a5aa5e29",
+        "version" : "1.2.5"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
