@@ -140,6 +140,7 @@ final class ProductViewController: UIViewController {
                     if (userResponse == nil) {
                         let message = "Create user error"
                         NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
+                        openBridgeButton.isEnabled = true
                         return
                     }
                     
@@ -184,7 +185,11 @@ final class ProductViewController: UIViewController {
     }
 
     private func showWebView(token: String) {
-        let truvBridgeController = TruvBridgeController(token: token, delegate: self, config: TruvSDKConfig(baseURL: AppState.shared.settings.stand.cdnUrl))
+        let truvBridgeController = TruvBridgeController(
+            token: token,
+            delegate: self,
+            config: .init(baseURL: AppState.shared.settings.stand.cdnUrl)
+        )
         truvBridgeController.modalPresentationStyle = .fullScreen
 
         present(truvBridgeController, animated: true)

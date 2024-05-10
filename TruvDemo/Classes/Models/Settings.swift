@@ -12,6 +12,7 @@ final class Settings: Codable, Hashable {
     var selectedEnvironment: Environment
     let clientId: ProductSetting
     let accessKeys: [ProductSetting]
+    var keyName: String?
     var userId: String?
     var stand: Stand
 
@@ -25,10 +26,11 @@ final class Settings: Codable, Hashable {
         ]
         stand  = Stand.production
         userId = nil
+        keyName = nil
     }
 
     var keyForSelectedEnvironment: String? {
-        return accessKeys.first(where: { $0.type == selectedEnvironment.productSettingsType })?.value
+        accessKeys.first(where: { $0.type == selectedEnvironment.productSettingsType })?.value
     }
 
     func hash(into hasher: inout Hasher) {
@@ -37,6 +39,7 @@ final class Settings: Codable, Hashable {
         hasher.combine(accessKeys)
         hasher.combine(userId)
         hasher.combine(stand)
+        hasher.combine(keyName)
     }
 
     static func == (lhs: Settings, rhs: Settings) -> Bool {
@@ -44,7 +47,8 @@ final class Settings: Codable, Hashable {
         lhs.clientId == rhs.clientId &&
         lhs.accessKeys == rhs.accessKeys &&
         lhs.userId == rhs.userId &&
-        lhs.stand == rhs.stand
+        lhs.stand == rhs.stand &&
+        lhs.keyName == rhs.keyName
     }
 
 }

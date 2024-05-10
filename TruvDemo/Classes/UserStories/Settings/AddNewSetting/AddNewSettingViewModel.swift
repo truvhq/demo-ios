@@ -13,6 +13,7 @@ class AddNewSettingViewModel: ObservableObject {
     @Published var selectedStand: Stand = .production
     @Published var cliendId: String = ""
     @Published var accessKey: String = ""
+    @Published var keyName: String = ""
     @Published var buttonTitle: String = L10n.addNewConfigurationTitle
     var updatePublisher = PassthroughSubject<Void, Never>()
 
@@ -41,6 +42,7 @@ class AddNewSettingViewModel: ObservableObject {
         selectedStand = settings.stand
         cliendId = settings.clientId.value ?? ""
         accessKey = settings.accessKeys.first?.value ?? ""
+        keyName = settings.keyName ?? ""
     }
 
     func saveConfiguration() {
@@ -52,6 +54,7 @@ class AddNewSettingViewModel: ObservableObject {
         let settings = Settings()
         settings.selectedEnvironment = selectedEnvironment
         settings.stand = selectedStand
+        settings.keyName = keyName
         if !cliendId.isEmpty {
             settings.clientId.value = cliendId
         }
@@ -73,6 +76,7 @@ class AddNewSettingViewModel: ObservableObject {
         let newSettings = Settings()
         newSettings.selectedEnvironment = selectedEnvironment
         newSettings.stand = selectedStand
+        newSettings.keyName = keyName
         if !cliendId.isEmpty {
             newSettings.clientId.value = cliendId
         }
@@ -80,7 +84,7 @@ class AddNewSettingViewModel: ObservableObject {
             newSettings.accessKeys.forEach { $0.value = accessKey }
         }
 
-        if let index = settings.firstIndex(where: { $0 == existingSettings}) {
+        if let index = settings.firstIndex(where: { $0 == existingSettings }) {
             settings[index] = newSettings
             keychainManager.saveSettingsArray(settings)
         }
