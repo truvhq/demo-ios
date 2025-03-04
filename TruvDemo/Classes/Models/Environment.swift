@@ -41,6 +41,7 @@ enum Stand: CaseIterable, Codable, Hashable {
     case development
     case stage
     case production
+    case local
     
     var apiUrl: String {
         switch self {
@@ -49,6 +50,8 @@ enum Stand: CaseIterable, Codable, Hashable {
         case .stage:
             return "https://stage.truv.com"
         case .development:
+            return "https://dev.truv.com"
+        case .local:
             return "https://dev.truv.com"
         }
     }
@@ -61,6 +64,8 @@ enum Stand: CaseIterable, Codable, Hashable {
             return "https://cdn-stage.truv.com"
         case .development:
             return "https://cdn-dev.truv.com"
+        case .local:
+            return "http://localhost:3700"
         }
     }
     
@@ -72,6 +77,8 @@ enum Stand: CaseIterable, Codable, Hashable {
             return "Stage"
         case .development:
             return "Development"
+        case .local:
+            return "Local"
         }
     }
 }

@@ -19,5 +19,31 @@
 			</array>
 		</dict>
 	</dict>
-</dict>
+	<key>NSAppTransportSecurity</key>  
+	<dict>  
+			<key>NSExceptionDomains</key>  
+			<dict>  
+					<key>localhost:3700</key>  
+					<dict>  
+							<key>NSExceptionAllowsInsecureHTTPLoads</key>  
+							<true/>  
+					</dict>  
+					<key>localhost:3701</key>  
+					<dict>  
+							<key>NSExceptionAllowsInsecureHTTPLoads</key>  
+							<true/>  
+					</dict>  
+					<key>localhost:3702</key>  
+					<dict>  
+							<key>NSExceptionAllowsInsecureHTTPLoads</key>  
+							<true/>  
+					</dict>  
+					<key>localhost:3703</key>  
+					<dict>  
+							<key>NSExceptionAllowsInsecureHTTPLoads</key>  
+							<true/>  
+					</dict>  
+			</dict>
+		</dict> 
+	</dict>
 </plist>
