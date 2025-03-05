@@ -76,6 +76,8 @@ final class SettingsViewController: UIViewController {
                     return Stand.stage
                 case .stage:
                     return Stand.production
+                case .local:
+                    return Stand.local
                 }
             }()
             
@@ -130,7 +132,7 @@ final class SettingsViewController: UIViewController {
     }
 
     private func didUpdateSettings() {
-        settings.userId = nil
+        AppState.shared.userId = nil
         keychainManager.saveSettings(settings)
         tableView.reloadData()
         standView.text = settings.stand.title

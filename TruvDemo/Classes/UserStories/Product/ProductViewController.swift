@@ -134,7 +134,7 @@ final class ProductViewController: UIViewController {
             
             openBridgeButton.isEnabled = false
             do {
-                var userId = AppState.shared.settings.userId
+                var userId = AppState.shared.userId
                 if (userId == nil) {
                     let userResponse = try await service.createUser(userId: UUID().uuidString)
                     if (userResponse == nil) {
@@ -145,11 +145,7 @@ final class ProductViewController: UIViewController {
                     }
                     
                     userId = userResponse!.id
-                    
-                    let settings = AppState.shared.settings
-                    settings.userId = userId
-                
-                    KeychainManager().saveSettings(settings)
+                    AppState.shared.userId = userId
                     
                     let message = "Created user with id \(userId ?? "")"
                     NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
@@ -188,7 +184,7 @@ final class ProductViewController: UIViewController {
         let truvBridgeController = TruvBridgeController(
             token: token,
             delegate: self,
-            config: .init(baseURL: AppState.shared.settings.stand.cdnUrl)
+            config: .init(baseURL: AppState.shared.settings.stand.cdnUrl, isDebug: true)
         )
         truvBridgeController.modalPresentationStyle = .fullScreen
 

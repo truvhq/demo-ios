@@ -13,7 +13,6 @@ final class Settings: Codable, Hashable {
     let clientId: ProductSetting
     let accessKeys: [ProductSetting]
     var keyName: String?
-    var userId: String?
     var stand: Stand
 
     init() {
@@ -25,7 +24,6 @@ final class Settings: Codable, Hashable {
             ProductSetting(type: .productionEnvironment)
         ]
         stand  = Stand.production
-        userId = nil
         keyName = nil
     }
 
@@ -37,7 +35,6 @@ final class Settings: Codable, Hashable {
         hasher.combine(selectedEnvironment)
         hasher.combine(clientId)
         hasher.combine(accessKeys)
-        hasher.combine(userId)
         hasher.combine(stand)
         hasher.combine(keyName)
     }
@@ -46,7 +43,6 @@ final class Settings: Codable, Hashable {
         lhs.selectedEnvironment == rhs.selectedEnvironment &&
         lhs.clientId == rhs.clientId &&
         lhs.accessKeys == rhs.accessKeys &&
-        lhs.userId == rhs.userId &&
         lhs.stand == rhs.stand &&
         lhs.keyName == rhs.keyName
     }
