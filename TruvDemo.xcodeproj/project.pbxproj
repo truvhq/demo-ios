@@ -636,8 +636,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/truvhq/ios-sdk";
 			requirement = {
-				branch = "release-1.6.0";
-				kind = branch;
+				kind = exactVersion;
+				version = 1.6.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
