@@ -1,5 +1,5 @@
 //
-//  ProductViewModelsFactory.swift
+//  BridgeProductViewModelsFactory.swift
 //  TruvDemo
 //
 //  Created by Sergey Butorin on 08.02.2022.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ProductViewModelsFactory {
+enum BridgeProductViewModelsFactory {
 
     static func makeAdditionalSettingViewModels(from product: Product, isSettingsExpanded: Bool) -> [SettingsCellViewModel] {
         guard isSettingsExpanded else { return [] }

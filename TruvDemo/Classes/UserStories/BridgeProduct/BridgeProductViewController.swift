@@ -1,5 +1,5 @@
 //
-//  ProductViewController.swift
+//  BridgeProductViewController.swift
 //  TruvDemo
 //
 //  Created by Sergey Butorin on 07.02.2022.
@@ -8,7 +8,7 @@
 import UIKit
 import TruvSDK
 
-final class ProductViewController: UIViewController {
+final class BridgeProductViewController: UIViewController {
 
     // MARK: - Properties
 
@@ -54,7 +54,7 @@ final class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = L10n.productTitle
+        title = L10n.bridgeTitle
 
         navigationController?.navigationBar.prefersLargeTitles = true
         setupSubviews()
@@ -174,7 +174,7 @@ final class ProductViewController: UIViewController {
     private func showEmptyKeyAlert() {
         let alertController = UIAlertController(title: L10n.errorKeyAlertTitle, message: L10n.errorKeyAlertDesription, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: L10n.errorKeyAlertButtonTitle, style: .default) { [weak self] _ in
-            self?.tabBarController?.selectedIndex = 2
+            self?.tabBarController?.selectedIndex = 3
         })
 
         present(alertController, animated: true, completion: nil)
@@ -192,7 +192,7 @@ final class ProductViewController: UIViewController {
     }
 
     private func reload() {
-        additionalSettingViewModels = ProductViewModelsFactory.makeAdditionalSettingViewModels(from: product, isSettingsExpanded: isSettingsExpanded)
+        additionalSettingViewModels = BridgeProductViewModelsFactory.makeAdditionalSettingViewModels(from: product, isSettingsExpanded: isSettingsExpanded)
         tableView.reloadData()
     }
 
@@ -202,7 +202,7 @@ final class ProductViewController: UIViewController {
 
 }
 
-extension ProductViewController: UITableViewDelegate {
+extension BridgeProductViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -216,7 +216,7 @@ extension ProductViewController: UITableViewDelegate {
 
 }
 
-extension ProductViewController: UITableViewDataSource {
+extension BridgeProductViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
@@ -282,7 +282,7 @@ extension ProductViewController: UITableViewDataSource {
 
 }
 
-extension ProductViewController: TruvDelegate {
+extension BridgeProductViewController: TruvDelegate {
 
     func onEvent(_ event: TruvSDK.TruvEvent) {
         TruvScriptMessageHandler.handleTruvSDKEvent(event: event)
@@ -290,10 +290,10 @@ extension ProductViewController: TruvDelegate {
 
 }
 
-private extension ProductViewController {
+private extension BridgeProductViewController {
 
     enum Constants {
-        static let cellReuseIdentifier = "ProductViewCellReuseIdentifier"
+        static let cellReuseIdentifier = "BridgeProductViewCellReuseIdentifier"
     }
 
 }

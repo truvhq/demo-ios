@@ -7,7 +7,10 @@
 
 enum L10n {
 
-    static let productTitle = "Product"
+    static let bridgeTitle = "Bridge"
+    static let orderTitle = "Order"
+    static let orderUrlPlaceholder = "Order URL"
+    static let openOrderButtonTitle = "Open Order"
     static let consoleTitle = "Console"
     static let settingsTitle = "Settings"
     static let addNewConfigurationTitle = "Add new configuration"
