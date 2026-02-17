@@ -33,6 +33,10 @@ enum L10n {
     static let accountType = "Account type"
     static let depositType = "Deposit type"
 
+    static let invalidOrderUrlAlertTitle = "Invalid URL"
+    static let invalidOrderUrlAlertMessage = "Please enter a valid URL to open the order page."
+    static let invalidOrderUrlAlertButtonTitle = "OK"
+
     static let emptyConsoleTitle = "Open the Truv Bridge to view logs"
     static let emptyConsoleButtonTitle = "Open Truv Bridge"
 

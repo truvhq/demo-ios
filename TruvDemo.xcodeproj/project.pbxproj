@@ -13,7 +13,6 @@
 		0731CBF8279DC3B900B1E531 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0731CBF7279DC3B900B1E531 /* Assets.xcassets */; };
 		0731CBFB279DC3B900B1E531 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0731CBF9279DC3B900B1E531 /* LaunchScreen.storyboard */; };
 		0779932327B1A6C5007B18DF /* BridgeProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932227B1A6C5007B18DF /* BridgeProductViewController.swift */; };
-		AA00000127B1A6C5007B18DF /* OrderProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000027B1A6C5007B18DF /* OrderProductViewController.swift */; };
 		0779932527B1A6D1007B18DF /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932427B1A6D1007B18DF /* ConsoleViewController.swift */; };
 		0779932727B1A6DC007B18DF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932627B1A6DC007B18DF /* SettingsViewController.swift */; };
 		0779932A27B1AA3B007B18DF /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932927B1AA3B007B18DF /* UIColor+Additions.swift */; };
@@ -54,6 +53,8 @@
 		A76C52082B792F1B00E50468 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C52072B792F1B00E50468 /* SettingsViewModel.swift */; };
 		A780C0E82BE100C300D0B38B /* TruvSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A780C0E72BE100C300D0B38B /* TruvSDK */; };
 		A7E1327E2B5AF1050078C01E /* TruvSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A7E1327D2B5AF1050078C01E /* TruvSDK */; };
+		AA00000127B1A6C5007B18DF /* OrderProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000027B1A6C5007B18DF /* OrderProductViewController.swift */; };
+		FAB69A8C2F3FD4E9004BB5E9 /* TruvOrderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB69A8B2F3FD4E9004BB5E9 /* TruvOrderController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,7 +66,6 @@
 		0731CBFA279DC3B900B1E531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0731CBFC279DC3B900B1E531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0779932227B1A6C5007B18DF /* BridgeProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeProductViewController.swift; sourceTree = "<group>"; };
-		AA00000027B1A6C5007B18DF /* OrderProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderProductViewController.swift; sourceTree = "<group>"; };
 		0779932427B1A6D1007B18DF /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
 		0779932627B1A6DC007B18DF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0779932927B1AA3B007B18DF /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
@@ -99,6 +99,8 @@
 		A76C52022B7923FC00E50468 /* SettingsProfileSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProfileSelectionView.swift; sourceTree = "<group>"; };
 		A76C52042B792DEF00E50468 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A76C52072B792F1B00E50468 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		AA00000027B1A6C5007B18DF /* OrderProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderProductViewController.swift; sourceTree = "<group>"; };
+		FAB69A8B2F3FD4E9004BB5E9 /* TruvOrderController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruvOrderController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,14 +227,6 @@
 			path = BridgeProduct;
 			sourceTree = "<group>";
 		};
-		AA00000227B2D550007B18DF /* OrderProduct */ = {
-			isa = PBXGroup;
-			children = (
-				AA00000027B1A6C5007B18DF /* OrderProductViewController.swift */,
-			);
-			path = OrderProduct;
-			sourceTree = "<group>";
-		};
 		0779934227B50233007B18DF /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,6 +303,15 @@
 				0779932627B1A6DC007B18DF /* SettingsViewController.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		AA00000227B2D550007B18DF /* OrderProduct */ = {
+			isa = PBXGroup;
+			children = (
+				FAB69A8B2F3FD4E9004BB5E9 /* TruvOrderController.swift */,
+				AA00000027B1A6C5007B18DF /* OrderProductViewController.swift */,
+			);
+			path = OrderProduct;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -412,6 +415,7 @@
 				AA00000127B1A6C5007B18DF /* OrderProductViewController.swift in Sources */,
 				A721E2012B7ABB9400591E2F /* ProfileSelectionView.swift in Sources */,
 				0779933F27B459A1007B18DF /* UITapGestureRecognizer+Additions.swift in Sources */,
+				FAB69A8C2F3FD4E9004BB5E9 /* TruvOrderController.swift in Sources */,
 				0779934127B45D9B007B18DF /* ProductSetting.swift in Sources */,
 				0779932527B1A6D1007B18DF /* ConsoleViewController.swift in Sources */,
 				A76C52082B792F1B00E50468 /* SettingsViewModel.swift in Sources */,

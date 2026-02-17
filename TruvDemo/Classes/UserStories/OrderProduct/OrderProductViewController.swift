@@ -45,6 +45,10 @@ final class OrderProductViewController: UIViewController {
         view.backgroundColor = .main
         navigationController?.navigationBar.prefersLargeTitles = true
         setupSubviews()
+
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        view.addGestureRecognizer(tapGesture)
     }
 
     // MARK: - Private
@@ -67,8 +71,43 @@ final class OrderProductViewController: UIViewController {
         ])
     }
 
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
     @objc private func didTapOpenOrderButton() {
-        // TODO: Implement order opening
+        view.endEditing(true)
+
+        guard
+            let urlString = orderUrlTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            !urlString.isEmpty
+        else {
+            showInvalidURLAlert()
+            return
+        }
+
+        guard let url = URL(string: urlString), url.scheme != nil, url.host != nil else {
+            showInvalidURLAlert()
+            return
+        }
+
+        showWebView(url: url)
+    }
+
+    private func showWebView(url: URL) {
+        let orderController = TruvOrderController(url: url)
+        orderController.modalPresentationStyle = .fullScreen
+        present(orderController, animated: true)
+    }
+
+    private func showInvalidURLAlert() {
+        let alert = UIAlertController(
+            title: L10n.invalidOrderUrlAlertTitle,
+            message: L10n.invalidOrderUrlAlertMessage,
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: L10n.invalidOrderUrlAlertButtonTitle, style: .default))
+        present(alert, animated: true)
     }
 
 }
