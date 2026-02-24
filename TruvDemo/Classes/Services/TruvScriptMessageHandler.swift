@@ -26,5 +26,9 @@ final class TruvScriptMessageHandler {
                 NotificationCenter.default.post(name: Notification.Name.Truv.closeWidget, object: nil)
         }
     }
+    
+    static func handleTruvSDKOrderEvent(event: TruvOrderEvent) {
+        NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: "order event: \(event)"])
+    }
 
 }

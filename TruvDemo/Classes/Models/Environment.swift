@@ -81,4 +81,17 @@ enum Stand: CaseIterable, Codable, Hashable {
             return "Local"
         }
     }
+    
+    var orderUrl: String {
+        switch self {
+        case .production:
+            return "https://my.truv.com"
+        case .stage:
+            return "https://my-stage.truv.com"
+        case .development:
+            return "https://my-dev.truv.com"
+        case .local:
+            return "http://localhost:3701"
+        }
+    }
 }

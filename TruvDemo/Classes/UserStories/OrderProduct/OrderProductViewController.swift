@@ -4,12 +4,12 @@
 //
 
 import UIKit
+import TruvSDK
 
 final class OrderProductViewController: UIViewController {
-
     // MARK: - Properties
 
-    private lazy var orderUrlTextField: UITextField = {
+    private lazy var orderTokenTextField: UITextField = {
         let textField = UITextField()
 
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -54,12 +54,12 @@ final class OrderProductViewController: UIViewController {
     // MARK: - Private
 
     private func setupSubviews() {
-        view.addSubview(orderUrlTextField)
+        view.addSubview(orderTokenTextField)
         NSLayoutConstraint.activate([
-            orderUrlTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            orderUrlTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            orderUrlTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            orderUrlTextField.heightAnchor.constraint(equalToConstant: 44)
+            orderTokenTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            orderTokenTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            orderTokenTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
+            orderTokenTextField.heightAnchor.constraint(equalToConstant: 44)
         ])
 
         view.addSubview(openOrderButton)
@@ -75,39 +75,63 @@ final class OrderProductViewController: UIViewController {
         view.endEditing(true)
     }
 
+    @objc private func closeWebView() {
+        dismiss(animated: true)
+    }
+
     @objc private func didTapOpenOrderButton() {
         view.endEditing(true)
 
         guard
-            let urlString = orderUrlTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-            !urlString.isEmpty
+            let orderBridgeToken = orderTokenTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            !orderBridgeToken.isEmpty
         else {
-            showInvalidURLAlert()
+            showInvalidTokenAlert()
             return
         }
 
-        guard let url = URL(string: urlString), url.scheme != nil, url.host != nil else {
-            showInvalidURLAlert()
-            return
-        }
-
-        showWebView(url: url)
+        showWebView(token: orderBridgeToken)
     }
 
-    private func showWebView(url: URL) {
-        let orderController = TruvOrderController(url: url)
-        orderController.modalPresentationStyle = .fullScreen
-        present(orderController, animated: true)
+    private func showWebView(token: String) {
+        let truvBridgeController = TruvBridgeController(
+            token: token,
+            isOrder: true,
+            delegate: self,
+            config: .init(
+                cdnURL: AppState.shared.settings.stand.cdnUrl,
+                apiURL: AppState.shared.settings.stand.apiUrl,
+                orderURL: AppState.shared.settings.stand.orderUrl,
+                isDebug: true
+            )
+        )
+        truvBridgeController.modalPresentationStyle = .fullScreen
+
+        present(truvBridgeController, animated: true)
     }
 
-    private func showInvalidURLAlert() {
+    private func showInvalidTokenAlert() {
         let alert = UIAlertController(
-            title: L10n.invalidOrderUrlAlertTitle,
-            message: L10n.invalidOrderUrlAlertMessage,
+            title: L10n.invalidOrderBridgeTokenAlertTitle,
+            message: L10n.invalidOrderBridgeTokenAlertMessage,
             preferredStyle: .alert
         )
-        alert.addAction(UIAlertAction(title: L10n.invalidOrderUrlAlertButtonTitle, style: .default))
+        alert.addAction(UIAlertAction(title: L10n.invalidOrderBridgeTokenAlertButtonTitle, style: .default))
         present(alert, animated: true)
+    }
+}
+
+extension OrderProductViewController: TruvDelegate {
+
+    func onEvent(_ event: TruvSDK.TruvEvent) {
+        TruvScriptMessageHandler.handleTruvSDKEvent(event: event)
+    }
+    
+    func onOrderEvent(_ event: TruvOrderEvent) {
+        TruvScriptMessageHandler.handleTruvSDKOrderEvent(event: event)
+        if case .close = event {
+            dismiss(animated: true)
+        }
     }
 
 }

@@ -184,7 +184,12 @@ final class BridgeProductViewController: UIViewController {
         let truvBridgeController = TruvBridgeController(
             token: token,
             delegate: self,
-            config: .init(cdnURL: AppState.shared.settings.stand.cdnUrl, apiURL: AppState.shared.settings.stand.apiUrl, isDebug: true)
+            config: .init(
+                cdnURL: AppState.shared.settings.stand.cdnUrl,
+                apiURL: AppState.shared.settings.stand.apiUrl,
+                orderURL: AppState.shared.settings.stand.orderUrl,
+                isDebug: true
+            )
         )
         truvBridgeController.modalPresentationStyle = .fullScreen
 
