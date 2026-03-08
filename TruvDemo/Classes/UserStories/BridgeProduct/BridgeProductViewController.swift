@@ -181,7 +181,7 @@ final class BridgeProductViewController: UIViewController {
     }
 
     private func showWebView(token: String) {
-        let truvBridgeController = TruvBridgeController.bridge(
+        let truvBridgeController = TruvBridgeController(
             token: token,
             delegate: self,
             config: .init(

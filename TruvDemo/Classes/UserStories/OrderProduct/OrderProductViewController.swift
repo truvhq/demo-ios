@@ -93,8 +93,8 @@ final class OrderProductViewController: UIViewController {
         showWebView(token: orderBridgeToken)
     }
 
-    private func showWebView(token: String) {
-        let truvBridgeController = TruvBridgeController.order(
+        private func showWebView(token: String) {
+        let truvBridgeController = TruvOrderController(
             token: token,
             delegate: self,
             config: .init(
@@ -121,16 +121,17 @@ final class OrderProductViewController: UIViewController {
 }
 
 extension OrderProductViewController: TruvOrderDelegate {
-
-    func onEvent(_ event: TruvSDK.TruvOrderEvent) {
-        if case .widgetEvent(let eventPayload) = event {
-            TruvScriptMessageHandler.handleTruvSDKEventOnEvent(event: eventPayload)
-        }
-        
+    
+    func onOrderEvent(_ event: TruvOrderEvent) {
         TruvScriptMessageHandler.handleTruvSDKOrderEvent(event: event)
+        
         if case .close = event {
             dismiss(animated: true)
         }
+    }
+    
+    func onBridgeEvent(_ event: TruvSDK.TruvEventPayload) {
+        TruvScriptMessageHandler.handleTruvSDKEventOnEvent(event: event)
     }
 
 }
