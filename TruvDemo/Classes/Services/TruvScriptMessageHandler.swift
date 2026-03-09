@@ -10,7 +10,7 @@ final class TruvScriptMessageHandler {
             let event,
             let encodedObject = try? jsonEncoder.encode(event),
             let prettyPrinted = NSString(data: encodedObject, encoding: String.Encoding.utf8.rawValue) {
-            NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: prettyPrinted])
+            NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: "bridge event: \(prettyPrinted)"])
         }
     }
 

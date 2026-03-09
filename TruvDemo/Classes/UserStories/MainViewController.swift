@@ -41,7 +41,7 @@ final class MainViewController: UITabBarController {
 
         let orderTabBarItem = UITabBarItem(
             title: L10n.orderTitle,
-            image: UIImage(systemName: "doc.text"), // TODO - it is a little bit different from the others
+            image: UIImage(systemName: "doc.text"),
             selectedImage: nil
         )
         orderProductController.tabBarItem = orderTabBarItem
