@@ -175,8 +175,8 @@
 			children = (
 				A76C52012B7923E800E50468 /* Settings */,
 				0779933727B2D550007B18DF /* BridgeProduct */,
-				AA00000227B2D550007B18DF /* OrderProduct */,
 				0731CBF2279DC3B700B1E531 /* MainViewController.swift */,
+				AA00000027B1A6C5007B18DF /* OrderProductViewController.swift */,
 				0779932427B1A6D1007B18DF /* ConsoleViewController.swift */,
 				0779933C27B43147007B18DF /* EditSettingViewController.swift */,
 			);
@@ -301,14 +301,6 @@
 				0779932627B1A6DC007B18DF /* SettingsViewController.swift */,
 			);
 			path = Settings;
-			sourceTree = "<group>";
-		};
-		AA00000227B2D550007B18DF /* OrderProduct */ = {
-			isa = PBXGroup;
-			children = (
-				AA00000027B1A6C5007B18DF /* OrderProductViewController.swift */,
-			);
-			path = OrderProduct;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
