@@ -100,14 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A780C0E82BE100C300D0B38B /* TruvSDK in Frameworks */,
-				A7090D062B56DB4D003278BC /* TruvSDK in Frameworks */,
 				FACFCDF62F5FBB4C002952DC /* TruvSDK in Frameworks */,
-				A7304F2C2B3F6523003A6B85 /* TruvSDK in Frameworks */,
-				FAB69A922F465D30004BB5E9 /* TruvSDK in Frameworks */,
-				A7E1327E2B5AF1050078C01E /* TruvSDK in Frameworks */,
-				A7090D092B56E76D003278BC /* TruvSDK in Frameworks */,
-				A7304F292B3F6426003A6B85 /* TruvSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,8 +622,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/truvhq/ios-sdk";
 			requirement = {
-				branch = release/1.9.0;
-				kind = branch;
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.9.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
