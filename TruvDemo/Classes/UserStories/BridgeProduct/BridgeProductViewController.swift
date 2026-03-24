@@ -174,7 +174,7 @@ final class BridgeProductViewController: UIViewController {
     private func showEmptyKeyAlert() {
         let alertController = UIAlertController(title: L10n.errorKeyAlertTitle, message: L10n.errorKeyAlertDesription, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: L10n.errorKeyAlertButtonTitle, style: .default) { [weak self] _ in
-            self?.tabBarController?.selectedIndex = 3
+            self?.tabBarController?.selectedIndex = MainViewController.settingsTabIndex
         })
 
         present(alertController, animated: true, completion: nil)
