@@ -7,7 +7,10 @@
 
 enum L10n {
 
-    static let productTitle = "Product"
+    static let bridgeTitle = "Bridge"
+    static let orderTitle = "Order"
+    static let orderUrlPlaceholder = "Order Bridge Token"
+    static let openOrderButtonTitle = "Open Order"
     static let consoleTitle = "Console"
     static let settingsTitle = "Settings"
     static let addNewConfigurationTitle = "Add new configuration"
@@ -29,6 +32,10 @@ enum L10n {
     static let bankAddress = "Bank Address"
     static let accountType = "Account type"
     static let depositType = "Deposit type"
+
+    static let invalidOrderBridgeTokenAlertTitle = "Invalid order bridge token"
+    static let invalidOrderBridgeTokenAlertMessage = "Please enter a valid order bridge token to open the order page."
+    static let invalidOrderBridgeTokenAlertButtonTitle = "OK"
 
     static let emptyConsoleTitle = "Open the Truv Bridge to view logs"
     static let emptyConsoleButtonTitle = "Open Truv Bridge"

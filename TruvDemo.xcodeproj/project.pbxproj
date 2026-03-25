@@ -12,7 +12,7 @@
 		0731CBF3279DC3B700B1E531 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0731CBF2279DC3B700B1E531 /* MainViewController.swift */; };
 		0731CBF8279DC3B900B1E531 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0731CBF7279DC3B900B1E531 /* Assets.xcassets */; };
 		0731CBFB279DC3B900B1E531 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0731CBF9279DC3B900B1E531 /* LaunchScreen.storyboard */; };
-		0779932327B1A6C5007B18DF /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932227B1A6C5007B18DF /* ProductViewController.swift */; };
+		0779932327B1A6C5007B18DF /* BridgeProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932227B1A6C5007B18DF /* BridgeProductViewController.swift */; };
 		0779932527B1A6D1007B18DF /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932427B1A6D1007B18DF /* ConsoleViewController.swift */; };
 		0779932727B1A6DC007B18DF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932627B1A6DC007B18DF /* SettingsViewController.swift */; };
 		0779932A27B1AA3B007B18DF /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932927B1AA3B007B18DF /* UIColor+Additions.swift */; };
@@ -20,7 +20,7 @@
 		0779933227B1B1BD007B18DF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779933127B1B1BD007B18DF /* Product.swift */; };
 		0779933427B2D165007B18DF /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779933327B2D165007B18DF /* MenuTableViewCell.swift */; };
 		0779933627B2D340007B18DF /* SettingsCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779933527B2D340007B18DF /* SettingsCellViewModel.swift */; };
-		0779933927B2D567007B18DF /* ProductViewModelsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779933827B2D567007B18DF /* ProductViewModelsFactory.swift */; };
+		0779933927B2D567007B18DF /* BridgeProductViewModelsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779933827B2D567007B18DF /* BridgeProductViewModelsFactory.swift */; };
 		0779933D27B43147007B18DF /* EditSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779933C27B43147007B18DF /* EditSettingViewController.swift */; };
 		0779933F27B459A1007B18DF /* UITapGestureRecognizer+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779933E27B459A1007B18DF /* UITapGestureRecognizer+Additions.swift */; };
 		0779934127B45D9B007B18DF /* ProductSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779934027B45D9B007B18DF /* ProductSetting.swift */; };
@@ -38,21 +38,16 @@
 		0779936727BE67E5007B18DF /* Notification+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779936627BE67E5007B18DF /* Notification+Additions.swift */; };
 		2882A29029A57DC1006DD1EE /* CreateUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882A28F29A57DC1006DD1EE /* CreateUserRequest.swift */; };
 		2882A29229A57E0E006DD1EE /* CreateUserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882A29129A57E0E006DD1EE /* CreateUserResponse.swift */; };
-		A7090D062B56DB4D003278BC /* TruvSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A7090D052B56DB4D003278BC /* TruvSDK */; };
-		A7090D092B56E76D003278BC /* TruvSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A7090D082B56E76D003278BC /* TruvSDK */; };
 		A721E1F72B7A9E7B00591E2F /* AddNewSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721E1F62B7A9E7B00591E2F /* AddNewSettingView.swift */; };
 		A721E1FA2B7AA22600591E2F /* SettingsHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721E1F92B7AA22600591E2F /* SettingsHostingController.swift */; };
 		A721E1FC2B7AA60200591E2F /* AddNewSettingHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721E1FB2B7AA60200591E2F /* AddNewSettingHostingController.swift */; };
 		A721E1FE2B7AA60900591E2F /* AddNewSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721E1FD2B7AA60900591E2F /* AddNewSettingViewModel.swift */; };
 		A721E2012B7ABB9400591E2F /* ProfileSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A721E2002B7ABB9400591E2F /* ProfileSelectionView.swift */; };
-		A7304F292B3F6426003A6B85 /* TruvSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A7304F282B3F6426003A6B85 /* TruvSDK */; };
-		A7304F2C2B3F6523003A6B85 /* TruvSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A7304F2B2B3F6523003A6B85 /* TruvSDK */; };
-		A73B0C672BE53A860020CA0F /* TruvSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A73B0C662BE53A860020CA0F /* TruvSDK */; };
 		A76C52032B7923FC00E50468 /* SettingsProfileSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C52022B7923FC00E50468 /* SettingsProfileSelectionView.swift */; };
 		A76C52052B792DEF00E50468 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C52042B792DEF00E50468 /* SettingsView.swift */; };
 		A76C52082B792F1B00E50468 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C52072B792F1B00E50468 /* SettingsViewModel.swift */; };
-		A780C0E82BE100C300D0B38B /* TruvSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A780C0E72BE100C300D0B38B /* TruvSDK */; };
-		A7E1327E2B5AF1050078C01E /* TruvSDK in Frameworks */ = {isa = PBXBuildFile; productRef = A7E1327D2B5AF1050078C01E /* TruvSDK */; };
+		AA00000127B1A6C5007B18DF /* OrderProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000027B1A6C5007B18DF /* OrderProductViewController.swift */; };
+		FACFCDF62F5FBB4C002952DC /* TruvSDK in Frameworks */ = {isa = PBXBuildFile; productRef = FACFCDF52F5FBB4C002952DC /* TruvSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +58,7 @@
 		0731CBF7279DC3B900B1E531 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0731CBFA279DC3B900B1E531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0731CBFC279DC3B900B1E531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0779932227B1A6C5007B18DF /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		0779932227B1A6C5007B18DF /* BridgeProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeProductViewController.swift; sourceTree = "<group>"; };
 		0779932427B1A6D1007B18DF /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
 		0779932627B1A6DC007B18DF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0779932927B1AA3B007B18DF /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
@@ -71,7 +66,7 @@
 		0779933127B1B1BD007B18DF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		0779933327B2D165007B18DF /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		0779933527B2D340007B18DF /* SettingsCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellViewModel.swift; sourceTree = "<group>"; };
-		0779933827B2D567007B18DF /* ProductViewModelsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModelsFactory.swift; sourceTree = "<group>"; };
+		0779933827B2D567007B18DF /* BridgeProductViewModelsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeProductViewModelsFactory.swift; sourceTree = "<group>"; };
 		0779933C27B43147007B18DF /* EditSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSettingViewController.swift; sourceTree = "<group>"; };
 		0779933E27B459A1007B18DF /* UITapGestureRecognizer+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+Additions.swift"; sourceTree = "<group>"; };
 		0779934027B45D9B007B18DF /* ProductSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSetting.swift; sourceTree = "<group>"; };
@@ -97,6 +92,7 @@
 		A76C52022B7923FC00E50468 /* SettingsProfileSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsProfileSelectionView.swift; sourceTree = "<group>"; };
 		A76C52042B792DEF00E50468 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A76C52072B792F1B00E50468 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		AA00000027B1A6C5007B18DF /* OrderProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderProductViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,13 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A780C0E82BE100C300D0B38B /* TruvSDK in Frameworks */,
-				A7090D062B56DB4D003278BC /* TruvSDK in Frameworks */,
-				A7304F2C2B3F6523003A6B85 /* TruvSDK in Frameworks */,
-				A73B0C672BE53A860020CA0F /* TruvSDK in Frameworks */,
-				A7E1327E2B5AF1050078C01E /* TruvSDK in Frameworks */,
-				A7090D092B56E76D003278BC /* TruvSDK in Frameworks */,
-				A7304F292B3F6426003A6B85 /* TruvSDK in Frameworks */,
+				FACFCDF62F5FBB4C002952DC /* TruvSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,8 +162,9 @@
 			isa = PBXGroup;
 			children = (
 				A76C52012B7923E800E50468 /* Settings */,
-				0779933727B2D550007B18DF /* Product */,
+				0779933727B2D550007B18DF /* BridgeProduct */,
 				0731CBF2279DC3B700B1E531 /* MainViewController.swift */,
+				AA00000027B1A6C5007B18DF /* OrderProductViewController.swift */,
 				0779932427B1A6D1007B18DF /* ConsoleViewController.swift */,
 				0779933C27B43147007B18DF /* EditSettingViewController.swift */,
 			);
@@ -213,13 +204,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		0779933727B2D550007B18DF /* Product */ = {
+		0779933727B2D550007B18DF /* BridgeProduct */ = {
 			isa = PBXGroup;
 			children = (
-				0779932227B1A6C5007B18DF /* ProductViewController.swift */,
-				0779933827B2D567007B18DF /* ProductViewModelsFactory.swift */,
+				0779932227B1A6C5007B18DF /* BridgeProductViewController.swift */,
+				0779933827B2D567007B18DF /* BridgeProductViewModelsFactory.swift */,
 			);
-			path = Product;
+			path = BridgeProduct;
 			sourceTree = "<group>";
 		};
 		0779934227B50233007B18DF /* Other */ = {
@@ -317,13 +308,7 @@
 			);
 			name = "Truv Demo";
 			packageProductDependencies = (
-				A7304F282B3F6426003A6B85 /* TruvSDK */,
-				A7304F2B2B3F6523003A6B85 /* TruvSDK */,
-				A7090D052B56DB4D003278BC /* TruvSDK */,
-				A7090D082B56E76D003278BC /* TruvSDK */,
-				A7E1327D2B5AF1050078C01E /* TruvSDK */,
-				A780C0E72BE100C300D0B38B /* TruvSDK */,
-				A73B0C662BE53A860020CA0F /* TruvSDK */,
+				FACFCDF52F5FBB4C002952DC /* TruvSDK */,
 			);
 			productName = TruvDemo;
 			productReference = 0731CBEB279DC3B700B1E531 /* Truv Demo.app */;
@@ -354,7 +339,7 @@
 			);
 			mainGroup = 0731CBE2279DC3B700B1E531;
 			packageReferences = (
-				A73B0C652BE53A860020CA0F /* XCRemoteSwiftPackageReference "ios-sdk" */,
+				FACFCDF42F5FBB4C002952DC /* XCRemoteSwiftPackageReference "ios-sdk" */,
 			);
 			productRefGroup = 0731CBEC279DC3B700B1E531 /* Products */;
 			projectDirPath = "";
@@ -397,7 +382,8 @@
 				A721E1FE2B7AA60900591E2F /* AddNewSettingViewModel.swift in Sources */,
 				0731CBEF279DC3B700B1E531 /* AppDelegate.swift in Sources */,
 				0779933027B1B068007B18DF /* ProductType.swift in Sources */,
-				0779932327B1A6C5007B18DF /* ProductViewController.swift in Sources */,
+				0779932327B1A6C5007B18DF /* BridgeProductViewController.swift in Sources */,
+				AA00000127B1A6C5007B18DF /* OrderProductViewController.swift in Sources */,
 				A721E2012B7ABB9400591E2F /* ProfileSelectionView.swift in Sources */,
 				0779933F27B459A1007B18DF /* UITapGestureRecognizer+Additions.swift in Sources */,
 				0779934127B45D9B007B18DF /* ProductSetting.swift in Sources */,
@@ -409,7 +395,7 @@
 				0779933227B1B1BD007B18DF /* Product.swift in Sources */,
 				0779932727B1A6DC007B18DF /* SettingsViewController.swift in Sources */,
 				0779934F27B55DB7007B18DF /* Settings.swift in Sources */,
-				0779933927B2D567007B18DF /* ProductViewModelsFactory.swift in Sources */,
+				0779933927B2D567007B18DF /* BridgeProductViewModelsFactory.swift in Sources */,
 				0779935327B56248007B18DF /* KeychainManager.swift in Sources */,
 				0779934D27B55CD4007B18DF /* Environment.swift in Sources */,
 				0779932A27B1AA3B007B18DF /* UIColor+Additions.swift in Sources */,
@@ -571,7 +557,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Truv.TruvDemoIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -599,7 +585,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.7.0;
+				MARKETING_VERSION = 1.9.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Truv.TruvDemoIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -632,44 +618,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		A73B0C652BE53A860020CA0F /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
+		FACFCDF42F5FBB4C002952DC /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/truvhq/ios-sdk";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 1.7.0;
+				minimumVersion = 1.9.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		A7090D052B56DB4D003278BC /* TruvSDK */ = {
+		FACFCDF52F5FBB4C002952DC /* TruvSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = TruvSDK;
-		};
-		A7090D082B56E76D003278BC /* TruvSDK */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = TruvSDK;
-		};
-		A7304F282B3F6426003A6B85 /* TruvSDK */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = TruvSDK;
-		};
-		A7304F2B2B3F6523003A6B85 /* TruvSDK */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = TruvSDK;
-		};
-		A73B0C662BE53A860020CA0F /* TruvSDK */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A73B0C652BE53A860020CA0F /* XCRemoteSwiftPackageReference "ios-sdk" */;
-			productName = TruvSDK;
-		};
-		A780C0E72BE100C300D0B38B /* TruvSDK */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = TruvSDK;
-		};
-		A7E1327D2B5AF1050078C01E /* TruvSDK */ = {
-			isa = XCSwiftPackageProductDependency;
+			package = FACFCDF42F5FBB4C002952DC /* XCRemoteSwiftPackageReference "ios-sdk" */;
 			productName = TruvSDK;
 		};
 /* End XCSwiftPackageProductDependency section */

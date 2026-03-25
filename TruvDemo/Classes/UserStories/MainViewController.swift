@@ -12,7 +12,10 @@ final class MainViewController: UITabBarController {
 
     // MARK: - Properties
 
-    private let productController = ProductViewController()
+    static let settingsTabIndex = 3
+
+    private let bridgeProductController = BridgeProductViewController()
+    private let orderProductController = OrderProductViewController()
     private let consoleController = ConsoleViewController()
     private let settingsController = SettingsHostingController()
 
@@ -31,12 +34,19 @@ final class MainViewController: UITabBarController {
     // MARK: - Private
 
     private func configureControllers() {
-        let productTabBarItem = UITabBarItem(
-            title: L10n.productTitle,
+        let bridgeTabBarItem = UITabBarItem(
+            title: L10n.bridgeTitle,
             image: UIImage(named: "PlayButton"),
             selectedImage: nil
         )
-        productController.tabBarItem = productTabBarItem
+        bridgeProductController.tabBarItem = bridgeTabBarItem
+
+        let orderTabBarItem = UITabBarItem(
+            title: L10n.orderTitle,
+            image: UIImage(systemName: "doc.text"),
+            selectedImage: nil
+        )
+        orderProductController.tabBarItem = orderTabBarItem
 
         let consoleTabBarItem = UITabBarItem(
             title: L10n.consoleTitle,
@@ -53,7 +63,8 @@ final class MainViewController: UITabBarController {
         settingsController.tabBarItem = settingsTabBarItem
 
         viewControllers = [
-            UINavigationController(rootViewController: productController),
+            UINavigationController(rootViewController: bridgeProductController),
+            UINavigationController(rootViewController: orderProductController),
             UINavigationController(rootViewController: consoleController),
             UINavigationController(rootViewController: settingsController)
         ]
