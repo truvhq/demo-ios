@@ -47,7 +47,8 @@
 		A76C52052B792DEF00E50468 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C52042B792DEF00E50468 /* SettingsView.swift */; };
 		A76C52082B792F1B00E50468 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C52072B792F1B00E50468 /* SettingsViewModel.swift */; };
 		AA00000127B1A6C5007B18DF /* OrderProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000027B1A6C5007B18DF /* OrderProductViewController.swift */; };
-		FACFCDF62F5FBB4C002952DC /* TruvSDK in Frameworks */ = {isa = PBXBuildFile; productRef = FACFCDF52F5FBB4C002952DC /* TruvSDK */; };
+		AF4C61AE2FBC5CDE00C18C07 /* TruvSDK.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4C61AD2FBC5CDE00C18C07 /* TruvSDK.xcframework */; };
+		AF8EB7702FBDCE9900962B64 /* TruvSDK in Frameworks */ = {isa = PBXBuildFile; productRef = AF8EB76F2FBDCE9900962B64 /* TruvSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		A76C52042B792DEF00E50468 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A76C52072B792F1B00E50468 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		AA00000027B1A6C5007B18DF /* OrderProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderProductViewController.swift; sourceTree = "<group>"; };
+		AF4C61AD2FBC5CDE00C18C07 /* TruvSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = TruvSDK.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +102,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FACFCDF62F5FBB4C002952DC /* TruvSDK in Frameworks */,
+				AF8EB7702FBDCE9900962B64 /* TruvSDK in Frameworks */,
+				AF4C61AE2FBC5CDE00C18C07 /* TruvSDK.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +133,7 @@
 				0731CBF7279DC3B900B1E531 /* Assets.xcassets */,
 				0731CBF9279DC3B900B1E531 /* LaunchScreen.storyboard */,
 				0731CBFC279DC3B900B1E531 /* Info.plist */,
+				AF4C61AD2FBC5CDE00C18C07 /* TruvSDK.xcframework */,
 			);
 			path = TruvDemo;
 			sourceTree = "<group>";
@@ -308,7 +312,7 @@
 			);
 			name = "Truv Demo";
 			packageProductDependencies = (
-				FACFCDF52F5FBB4C002952DC /* TruvSDK */,
+				AF8EB76F2FBDCE9900962B64 /* TruvSDK */,
 			);
 			productName = TruvDemo;
 			productReference = 0731CBEB279DC3B700B1E531 /* Truv Demo.app */;
@@ -339,7 +343,7 @@
 			);
 			mainGroup = 0731CBE2279DC3B700B1E531;
 			packageReferences = (
-				FACFCDF42F5FBB4C002952DC /* XCRemoteSwiftPackageReference "ios-sdk" */,
+				AF8EB76E2FBDCE9900962B64 /* XCRemoteSwiftPackageReference "ios-sdk" */,
 			);
 			productRefGroup = 0731CBEC279DC3B700B1E531 /* Products */;
 			projectDirPath = "";
@@ -618,9 +622,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FACFCDF42F5FBB4C002952DC /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
+		AF8EB76E2FBDCE9900962B64 /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/truvhq/ios-sdk";
+			repositoryURL = "https://github.com/truvhq/ios-sdk.git";
 			requirement = {
 				branch = release/1.10.0;
 				kind = branch;
@@ -629,9 +633,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FACFCDF52F5FBB4C002952DC /* TruvSDK */ = {
+		AF8EB76F2FBDCE9900962B64 /* TruvSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FACFCDF42F5FBB4C002952DC /* XCRemoteSwiftPackageReference "ios-sdk" */;
+			package = AF8EB76E2FBDCE9900962B64 /* XCRemoteSwiftPackageReference "ios-sdk" */;
 			productName = TruvSDK;
 		};
 /* End XCSwiftPackageProductDependency section */
