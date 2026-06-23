@@ -2,6 +2,9 @@
 xcuserdata/
 TruvDemo.xcodeproj/project.xcworkspace/xcuserdata/
 
+## Xcode auto-generated shared schemes (not tracked; Package.resolved under xcshareddata/swiftpm is unaffected)
+*.xcscheme
+
 ## Obj-C/Swift specific
 *.hmap
 
