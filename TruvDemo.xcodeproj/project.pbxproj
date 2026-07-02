@@ -47,7 +47,7 @@
 		A76C52052B792DEF00E50468 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C52042B792DEF00E50468 /* SettingsView.swift */; };
 		A76C52082B792F1B00E50468 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C52072B792F1B00E50468 /* SettingsViewModel.swift */; };
 		AA00000127B1A6C5007B18DF /* OrderProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00000027B1A6C5007B18DF /* OrderProductViewController.swift */; };
-		FACFCDF62F5FBB4C002952DC /* TruvSDK in Frameworks */ = {isa = PBXBuildFile; productRef = FACFCDF52F5FBB4C002952DC /* TruvSDK */; };
+		AFDEF1B32FEB314E005D2C52 /* TruvSDK in Frameworks */ = {isa = PBXBuildFile; productRef = AFDEF1B22FEB314E005D2C52 /* TruvSDK */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,7 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FACFCDF62F5FBB4C002952DC /* TruvSDK in Frameworks */,
+				AFDEF1B32FEB314E005D2C52 /* TruvSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +308,7 @@
 			);
 			name = "Truv Demo";
 			packageProductDependencies = (
-				FACFCDF52F5FBB4C002952DC /* TruvSDK */,
+				AFDEF1B22FEB314E005D2C52 /* TruvSDK */,
 			);
 			productName = TruvDemo;
 			productReference = 0731CBEB279DC3B700B1E531 /* Truv Demo.app */;
@@ -339,7 +339,7 @@
 			);
 			mainGroup = 0731CBE2279DC3B700B1E531;
 			packageReferences = (
-				FACFCDF42F5FBB4C002952DC /* XCRemoteSwiftPackageReference "ios-sdk" */,
+				AFDEF1B12FEB314E005D2C52 /* XCRemoteSwiftPackageReference "ios-sdk" */,
 			);
 			productRefGroup = 0731CBEC279DC3B700B1E531 /* Products */;
 			projectDirPath = "";
@@ -557,7 +557,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.0;
+				MARKETING_VERSION = 1.11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Truv.TruvDemoIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -585,7 +585,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.9.0;
+				MARKETING_VERSION = 1.11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Truv.TruvDemoIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -618,20 +618,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FACFCDF42F5FBB4C002952DC /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
+		AFDEF1B12FEB314E005D2C52 /* XCRemoteSwiftPackageReference "ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/truvhq/ios-sdk";
+			repositoryURL = "https://github.com/truvhq/ios-sdk.git";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 1.9.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.11.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FACFCDF52F5FBB4C002952DC /* TruvSDK */ = {
+		AFDEF1B22FEB314E005D2C52 /* TruvSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FACFCDF42F5FBB4C002952DC /* XCRemoteSwiftPackageReference "ios-sdk" */;
+			package = AFDEF1B12FEB314E005D2C52 /* XCRemoteSwiftPackageReference "ios-sdk" */;
 			productName = TruvSDK;
 		};
 /* End XCSwiftPackageProductDependency section */
