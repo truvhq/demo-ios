@@ -72,7 +72,8 @@ final class NetworkService {
 
         request.httpBody = body
 
-        let message = "Starting request \(tokenUrl.absoluteString) with clientId \(formatCredential(clientId)) and secret \(formatCredential(clientSecret))"
+        let bodyDescription = body.flatMap { String(data: $0, encoding: .utf8) } ?? "nil"
+        let message = "Starting request \(tokenUrl.absoluteString) with clientId \(formatCredential(clientId)) and secret \(formatCredential(clientSecret)), body: \(bodyDescription)"
         DispatchQueue.main.async {
             NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
         }
