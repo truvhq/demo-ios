@@ -20,8 +20,8 @@ enum L10n {
     static let showAdditionalSettings = "Show additional settings"
 
     static let errorKeyAlertTitle = "Can’t open Truv Bridge"
-    static let errorKeyAlertDesription = "Add a key or change the environment in the settings to run Truv Bridge"
-    static let errorKeyAlertButtonTitle = "Open settings"
+    static let errorKeyAlertDesription = "Check the logs to see what went wrong and change the keys in the settings if needed"
+    static let errorKeyAlertButtonTitle = "Open logs"
 
     static let companyMappingId = "Company Mapping ID"
     static let providerId = "Provider ID"
