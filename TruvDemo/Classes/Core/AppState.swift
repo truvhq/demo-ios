@@ -18,7 +18,11 @@ final class AppState {
 
     var userId: String? {
         get {
-            guard let user = user, user.contextKey == userContextKey else { return nil }
+            guard let user = user else { return nil }
+            guard user.contextKey == userContextKey else {
+                self.user = nil
+                return nil
+            }
             return user.id
         }
         set {
