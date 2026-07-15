@@ -14,7 +14,6 @@
 		0731CBFB279DC3B900B1E531 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0731CBF9279DC3B900B1E531 /* LaunchScreen.storyboard */; };
 		0779932327B1A6C5007B18DF /* BridgeProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932227B1A6C5007B18DF /* BridgeProductViewController.swift */; };
 		0779932527B1A6D1007B18DF /* ConsoleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932427B1A6D1007B18DF /* ConsoleViewController.swift */; };
-		0779932727B1A6DC007B18DF /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932627B1A6DC007B18DF /* SettingsViewController.swift */; };
 		0779932A27B1AA3B007B18DF /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932927B1AA3B007B18DF /* UIColor+Additions.swift */; };
 		0779933027B1B068007B18DF /* ProductType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779932F27B1B068007B18DF /* ProductType.swift */; };
 		0779933227B1B1BD007B18DF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0779933127B1B1BD007B18DF /* Product.swift */; };
@@ -60,7 +59,6 @@
 		0731CBFC279DC3B900B1E531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0779932227B1A6C5007B18DF /* BridgeProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeProductViewController.swift; sourceTree = "<group>"; };
 		0779932427B1A6D1007B18DF /* ConsoleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleViewController.swift; sourceTree = "<group>"; };
-		0779932627B1A6DC007B18DF /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0779932927B1AA3B007B18DF /* UIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		0779932F27B1B068007B18DF /* ProductType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductType.swift; sourceTree = "<group>"; };
 		0779933127B1B1BD007B18DF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -286,7 +284,6 @@
 			children = (
 				A721E1F82B7AA20A00591E2F /* MainScreen */,
 				A721E1F52B7A9E7100591E2F /* AddNewSetting */,
-				0779932627B1A6DC007B18DF /* SettingsViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -393,7 +390,6 @@
 				0731CBF1279DC3B700B1E531 /* SceneDelegate.swift in Sources */,
 				0779933627B2D340007B18DF /* SettingsCellViewModel.swift in Sources */,
 				0779933227B1B1BD007B18DF /* Product.swift in Sources */,
-				0779932727B1A6DC007B18DF /* SettingsViewController.swift in Sources */,
 				0779934F27B55DB7007B18DF /* Settings.swift in Sources */,
 				0779933927B2D567007B18DF /* BridgeProductViewModelsFactory.swift in Sources */,
 				0779935327B56248007B18DF /* KeychainManager.swift in Sources */,

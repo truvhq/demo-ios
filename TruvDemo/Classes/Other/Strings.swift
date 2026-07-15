@@ -46,7 +46,6 @@ enum L10n {
     static let production = "Production"
 
     static let clientId = "Client ID"
-    static let accessKeys = "ACCESS KEYS"
 
     static let accessKey = "Access Key"
     static let keyName = "Key Name"
