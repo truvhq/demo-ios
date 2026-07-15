@@ -128,6 +128,8 @@ final class BridgeProductViewController: UIViewController {
     @objc private func didTapOpenBridgeButton() {
         Task {
             guard let accessKey = AppState.shared.settings.keyForSelectedEnvironment, !accessKey.isEmpty else {
+                let message = "Can't open Truv Bridge: access key is empty"
+                NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
                 showErrorAlert()
                 return
             }
