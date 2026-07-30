@@ -128,7 +128,9 @@ final class BridgeProductViewController: UIViewController {
     @objc private func didTapOpenBridgeButton() {
         Task {
             guard let accessKey = AppState.shared.settings.keyForSelectedEnvironment, !accessKey.isEmpty else {
-                showEmptyKeyAlert()
+                let message = "Can't open Truv Bridge: access key is empty"
+                NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
+                showErrorAlert()
                 return
             }
             
@@ -136,11 +138,21 @@ final class BridgeProductViewController: UIViewController {
             do {
                 var userId = AppState.shared.userId
                 if (userId == nil) {
-                    let userResponse = try await service.createUser(userId: UUID().uuidString)
+                    let userResponse: CreateUserResponse?
+                    do {
+                        userResponse = try await service.createUser(userId: UUID().uuidString)
+                    } catch {
+                        let message = makeErrorLogMessage(action: "Create user", error: error)
+                        NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
+                        openBridgeButton.isEnabled = true
+                        showErrorAlert()
+                        return
+                    }
                     if (userResponse == nil) {
                         let message = "Create user error"
                         NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
                         openBridgeButton.isEnabled = true
+                        showErrorAlert()
                         return
                     }
                     
@@ -158,23 +170,32 @@ final class BridgeProductViewController: UIViewController {
                 
                 self.openBridgeButton.isEnabled = true
                 guard let token = tokenResponse?.bridge_token else {
-                    self.showEmptyKeyAlert()
+                    self.showErrorAlert()
                     return
                 }
                 
                 self.showWebView(token: token)
             } catch {
                 self.openBridgeButton.isEnabled = true
-                let message = "Create bridge token error \(error.localizedDescription)"
+                let message = makeErrorLogMessage(action: "Create bridge token", error: error)
                 NotificationCenter.default.post(name: Notification.Name.Truv.log, object: nil, userInfo: [NotificationKeys.message.rawValue: message])
+                self.showErrorAlert()
             }   
         }
     }
 
-    private func showEmptyKeyAlert() {
+    private func makeErrorLogMessage(action: String, error: Error) -> String {
+        if case let NetworkError.unexpectedResponse(statusCode, body) = error {
+            let status = statusCode.map { " (HTTP \($0))" } ?? ""
+            return "\(action) error\(status): \(body)"
+        }
+        return "\(action) error: \(error.localizedDescription)"
+    }
+
+    private func showErrorAlert() {
         let alertController = UIAlertController(title: L10n.errorKeyAlertTitle, message: L10n.errorKeyAlertDesription, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: L10n.errorKeyAlertButtonTitle, style: .default) { [weak self] _ in
-            self?.tabBarController?.selectedIndex = MainViewController.settingsTabIndex
+            self?.tabBarController?.selectedIndex = MainViewController.consoleTabIndex
         })
 
         present(alertController, animated: true, completion: nil)

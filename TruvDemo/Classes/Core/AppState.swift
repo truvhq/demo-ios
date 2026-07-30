@@ -12,9 +12,33 @@ final class AppState {
     private init() {}
 
     var product = Product()
-    var userId: String? = nil
     var settings: Settings {
         KeychainManager().retrieveSettings() ?? Settings()
+    }
+
+    var userId: String? {
+        get {
+            guard let user = user else { return nil }
+            guard user.contextKey == userContextKey else {
+                self.user = nil
+                return nil
+            }
+            return user.id
+        }
+        set {
+            user = newValue.map { (id: $0, contextKey: userContextKey) }
+        }
+    }
+
+    private var user: (id: String, contextKey: String)?
+
+    private var userContextKey: String {
+        let settings = self.settings
+        return [
+            settings.stand.apiUrl,
+            settings.clientId.value ?? "",
+            settings.keyForSelectedEnvironment ?? ""
+        ].joined(separator: "|")
     }
 
 }

@@ -12,7 +12,7 @@ final class MainViewController: UITabBarController {
 
     // MARK: - Properties
 
-    static let settingsTabIndex = 3
+    static let consoleTabIndex = 2
 
     private let bridgeProductController = BridgeProductViewController()
     private let orderProductController = OrderProductViewController()
