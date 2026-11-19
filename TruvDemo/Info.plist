@@ -2,7 +2,32 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>ITSAppUsesNonExemptEncryption</key><false/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>localhost:3700</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>localhost:3701</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>localhost:3702</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+			<key>localhost:3703</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -20,31 +45,5 @@
 			</array>
 		</dict>
 	</dict>
-	<key>NSAppTransportSecurity</key>  
-	<dict>  
-			<key>NSExceptionDomains</key>  
-			<dict>  
-					<key>localhost:3700</key>  
-					<dict>  
-							<key>NSExceptionAllowsInsecureHTTPLoads</key>  
-							<true/>  
-					</dict>  
-					<key>localhost:3701</key>  
-					<dict>  
-							<key>NSExceptionAllowsInsecureHTTPLoads</key>  
-							<true/>  
-					</dict>  
-					<key>localhost:3702</key>  
-					<dict>  
-							<key>NSExceptionAllowsInsecureHTTPLoads</key>  
-							<true/>  
-					</dict>  
-					<key>localhost:3703</key>  
-					<dict>  
-							<key>NSExceptionAllowsInsecureHTTPLoads</key>  
-							<true/>  
-					</dict>  
-			</dict>
-		</dict> 
-	</dict>
+</dict>
 </plist>
