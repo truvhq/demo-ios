@@ -621,7 +621,7 @@
 			repositoryURL = "https://github.com/truvhq/ios-sdk.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = "2.0.0-rc.1";
+				minimumVersion = "2.0.0-rc.2";
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
